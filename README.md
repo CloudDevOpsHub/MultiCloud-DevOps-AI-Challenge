@@ -140,7 +140,7 @@
 
 ## 🔥 Why Learn with CloudDevOpsHub & Vikas Ratnawat?
 
-### ✅ USP #1 — 100% LIVE Sessions (Never Just Recordings)
+### ✅ Reason #1 — 100% LIVE Sessions (Never Just Recordings)
 
 ```
 ❌ Other platforms  →  Pre-recorded videos  →  You watch alone  →  No questions answered
@@ -151,7 +151,7 @@ Every question gets answered in the 9:15 AM Q&A slot (Monday to Friday).
 You are never alone in your learning journey.
 ```
 
-### ✅ USP #2 — 100% Satisfaction Guarantee (Unmatched in Industry)
+### ✅ Reason #2 — 100% Satisfaction Guarantee (Unmatched in Industry)
 
 ```
 🔒 Our Guarantee:
@@ -168,7 +168,7 @@ This is how confident we are in the program quality.
 No other DevOps program in India offers this.
 ```
 
-### ✅ USP #3 — 1000-Day Recording Access
+### ✅ Reason #3 — 1000-Day Recording Access
 
 ```
 Other programs: 6 months recording access → expired → you lose everything
@@ -179,7 +179,7 @@ Want to revise after 6 months? Still available.
 Preparing for interviews 1 year later? All 55 sessions still there.
 ```
 
-### ✅ USP #4 — Multi-Cloud (AWS + GCP + Azure) — The Rarest Skill Combo
+### ✅ Reason #4 — Multi-Cloud (AWS + GCP + Azure) — The Rarest Skill Combo
 
 ```
 Most programs:      AWS only (or GCP only or Azure only)
@@ -193,7 +193,7 @@ Salary impact of Multi-Cloud:
 You learn all three. You interview for all three.
 ```
 
-### ✅ USP #5 — AI Integrated Throughout Every Module
+### ✅ Reason #5 — AI Integrated Throughout Every Module
 
 ```
 Not a separate "AI module added at the end."
@@ -208,7 +208,7 @@ Session 48 → Advanced AI Co-Programmer workflows
 Session 55 → Production AI API integration project
 ```
 
-### ✅ USP #6 — 8 Real-Time Projects (MNC-Level Portfolio)
+### ✅ Reason #6 — 8 Real-Time Projects (MNC-Level Portfolio)
 
 ```
 Project 1:  CI/CD Pipeline Automation      → Jenkins + Docker + GitHub
@@ -223,7 +223,7 @@ Project 8:  AI OPS Automation              → AIOps + Azure + Dashboard
 Every project is interview-ready and goes directly on your resume.
 ```
 
-### ✅ USP #7 — Weekly Mock Interviews (Every Wednesday 8 PM IST)
+### ✅ Reason #7 — Weekly Mock Interviews (Every Wednesday 8 PM IST)
 
 ```
 8 structured mock interview sessions throughout the program.
@@ -235,7 +235,7 @@ Result: You walk into interviews already having been interviewed 8 times.
 No surprises. No nervousness. Just confidence.
 ```
 
-### ✅ USP #8 — 116 Continuous Hands-On Tasks (Task-001 → Task-116)
+### ✅ Reason #8 — 116 Continuous Hands-On Tasks (Task-001 → Task-116)
 
 ```
 Every session = 2 practical tasks
@@ -249,7 +249,7 @@ By Task-116, you have 116 documented hands-on activities.
 That is your proof of work. That is your portfolio evidence.
 ```
 
-### ✅ USP #9 — 58,000+ Community (Your Career Network)
+### ✅ Reason #9 — 58,000+ Community (Your Career Network)
 
 ```
 India's Largest Cloud & DevOps Community
@@ -264,7 +264,7 @@ India's Largest Cloud & DevOps Community
 Network is NOT just a nice-to-have. It IS the career accelerator.
 ```
 
-### ✅ USP #10 — Placement Support Until You Get the Offer
+### ✅ Reason #10 — Placement Support Until You Get the Offer
 
 ```
 ✅ ATS Resume Review by Vikas personally
@@ -286,7 +286,7 @@ We don't stop at teaching. We stop when you are placed.
 | Feature | Other Programs | CloudDevOpsHub |
 |---------|---------------|----------------|
 | Session Format | Recorded / Hybrid | **100% LIVE** |
-| Mentor Experience | Trainer background | **Ex-Amazon/PwC/Microsoft/Google MVP** |
+| Mentor Experience | Trainer background | **RealTime IT working Professional from PwC/Microsoft/** |
 | Cloud Coverage | Single cloud | **AWS + GCP + Azure** |
 | AI Integration | Separate module | **Throughout all 55 sessions** |
 | Projects | 1–3 demo projects | **8 MNC-level real projects** |
@@ -294,7 +294,7 @@ We don't stop at teaching. We stop when you are placed.
 | Recording Access | 3–6 months | **1000 days (3 years)** |
 | Mock Interviews | Rarely included | **8 sessions every Wednesday** |
 | Success Stories | Few testimonials | **1000+ documented placements** |
-| Satisfaction Guarantee | None | **100% — repeat next batch FREE** |
+| Satisfaction Guarantee | None | **100% ** |
 | Community Size | Small | **58,000+ members** |
 | Placement Support | Resume template | **Full support until offer letter** |
 | Q&A | Email or forum | **Live daily 9:15–10:00 AM IST** |
@@ -311,7 +311,7 @@ Returns:
 
 → If you get placed at ₹10 LPA (conservative):
    First year extra earnings vs ₹4 LPA job = ₹6 LPA extra
-   ROI in Year 1 = 600%+ depending on your starting point
+   ROI in Year 1 = 600%+, depending on your starting point
 
 → If you get placed at ₹18 LPA (average):
    First year extra earnings vs ₹6 LPA job = ₹12 LPA extra
@@ -358,7 +358,7 @@ Module 10 →  Graduation + Mock Interviews + Placement (Session 58 + Wednesdays
 ```
 → You are serious about a ₹15–50 LPA Cloud/DevOps career
 → You can commit 2 hours daily for 2.5 months
-→ You want to learn from someone who actually worked at Amazon/Google/PwC
+→ You want to learn from someone who actually worked at MNC's
 → You prefer LIVE interaction over watching recordings alone
 → You want 8 real projects on your resume, not just certificates
 → You are tired of random YouTube playlists that go nowhere
