@@ -53,10 +53,10 @@
 1000+   Students placed across India and globally
 ₹8 LPA  Average starting package for freshers after the program
 ₹18 LPA Average package for lateral hires after the program
-₹50 LPA Highest package achieved by a CloudDevOpsHub student
+₹50 LPA Multiple Highest package achieved by a CloudDevOpsHub student
 3x      Average salary increase for existing IT professionals
-40+     Batches successfully completed
-10,000+ Total engineers trained since founding
+42+     Batches successfully completed
+10,000+ Total engineers trained since founding, online Now & offline before Covid
 ```
 
 <div align="center">
@@ -94,19 +94,13 @@
 
 ```
 🏢 Current     →  Founder & CEO, CloudDevOpsHub
-                   India's Largest Cloud & DevOps Community (58,000+ Members)
+                   India's Cloud & DevOps Community (58,000+ Members in FB + 40,000 in WhatsApp)
 
 🏢 PwC         →  Cloud & DevOps Architect
                    Led multi-cloud transformation projects for Fortune 500 clients
 
-🏢 Amazon      →  Senior DevOps Engineer
-                   Built and maintained AWS infrastructure at massive scale
-
 🏢 Microsoft   →  Cloud Solutions Architect
                    Azure implementation and client success
-
-🏢 Google      →  Cloud Partner Engineer
-                   GCP enterprise implementations and technical evangelism
 ```
 
 ### 🎖️ Credentials & Recognition
@@ -119,7 +113,7 @@
 | 🔷 **Azure Certified** | DevOps Engineer Expert |
 | 📚 **Faculty** | Taught at top engineering colleges across India |
 | 🎤 **Speaker** | Microsoft Events, Google Cloud Summits, AWS re:Invent sessions |
-| ✍️ **Author** | Technical content consumed by 500,000+ engineers |
+| ✍️ **Author** | Technical content consumed by 50,000+ engineers |
 
 ### 💬 Why Vikas Teaches Differently
 
@@ -152,8 +146,8 @@
 ❌ Other platforms  →  Pre-recorded videos  →  You watch alone  →  No questions answered
 ✅ CloudDevOpsHub  →  100% LIVE daily       →  Ask anything      →  Answered in real-time
 
-Every session is live at 8:00 AM IST.
-Every question gets answered in the 9:15 AM Q&A slot.
+Every session is 100% live & intercative at 8:00 AM IST (Monday to Friday).
+Every question gets answered in the 9:15 AM Q&A slot (Monday to Friday).
 You are never alone in your learning journey.
 ```
 
@@ -163,9 +157,9 @@ You are never alone in your learning journey.
 🔒 Our Guarantee:
 
 If you attend every session, complete all tasks, and you are still
-not satisfied with the quality of learning —
+not satisfied with the quality of learning (Must have 90% of the Attainance) —
 
-→ You can repeat the NEXT BATCH completely FREE
+→ You will be a Module Expert
 → No questions asked
 → No forms to fill
 → No arguments
