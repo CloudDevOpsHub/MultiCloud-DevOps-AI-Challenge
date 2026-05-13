@@ -3,7 +3,7 @@
 
 <div align="center">
 
-<img src="https://img.shields.io/badge/55%20Live%20Sessions-2.5%20Months-FF6B35?style=for-the-badge&logoColor=white" />
+<img src="https://img.shields.io/badge/55%20Live%20Sessions-Regular 2.5%20Months-FF6B35?style=for-the-badge&logoColor=white" />
 <img src="https://img.shields.io/badge/1000%2B-Success%20Stories-28A745?style=for-the-badge&logoColor=white" />
 <img src="https://img.shields.io/badge/100%25-Satisfaction%20Guarantee-007BFF?style=for-the-badge&logoColor=white" />
 <img src="https://img.shields.io/badge/58%2C000%2B-Community%20Members-6F42C1?style=for-the-badge&logoColor=white" />
