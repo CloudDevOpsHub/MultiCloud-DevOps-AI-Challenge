@@ -33,6 +33,178 @@
 </div>
 
 > These are not fake testimonials. These are real engineers from our community who transformed their careers.
+>
+> ### 🎬 Watch Their Stories — Straight From Their Mouths
+
+<div align="center">
+
+<table>
+<tr>
+
+<!-- ── CARD 1: TUSHAR ── -->
+<td align="center" width="33%">
+<a href="https://www.youtube.com/watch?v=gHBx-vYsPVo&t=1s" target="_blank">
+<img src="https://img.youtube.com/vi/gHBx-vYsPVo/mqdefault.jpg"
+     width="260" style="border-radius:8px; border:2px solid #FF6B35;"
+     alt="Tushar — Fresher to DevOps & Cloud Engineer"/>
+</a>
+<br/><br/>
+<b>🧑‍💻 Tushar</b><br/>
+<code>Fresher → DevOps & Cloud Engineer</code><br/>
+<img src="https://img.shields.io/badge/Target-10--15%20LPA%20(1%20yr)-28A745?style=flat-square"/>
+<br/>
+<sub>College se seedha Cloud profile mein placed.<br/>
+Naukri.com call → 4 rounds cleared.<br/>
+Resume + batch community = game changer.</sub>
+</td>
+
+<!-- ── CARD 2: PAWAN ── -->
+<td align="center" width="33%">
+<a href="https://www.youtube.com/watch?v=dcTDbBcdREk&t=1s" target="_blank">
+<img src="https://img.youtube.com/vi/dcTDbBcdREk/mqdefault.jpg"
+     width="260" style="border-radius:8px; border:2px solid #FF6B35;"
+     alt="Pawan — 9 Yrs Exp to Pure Cloud Engineer"/>
+</a>
+<br/><br/>
+<b>🧑‍💻 Pawan</b><br/>
+<code>9 Yrs (Other Domain) → Pure Cloud Engineer</code><br/>
+<img src="https://img.shields.io/badge/Hike-30--45%25%20in%202%20Months-28A745?style=flat-square"/>
+<br/>
+<sub>DevOps mein zero tha — 2 months mein hike.<br/>
+Mock interviews + raat tak practice.<br/>
+Pipeline mein 2–4 aur offers bhi the.</sub>
+</td>
+
+<!-- ── CARD 3: RISHIKESH ── -->
+<td align="center" width="33%">
+<a href="https://www.youtube.com/watch?v=7CPTOF1j0Xk" target="_blank">
+<img src="https://img.youtube.com/vi/7CPTOF1j0Xk/mqdefault.jpg"
+     width="260" style="border-radius:8px; border:2px solid #FF6B35;"
+     alt="Rishikesh — 48% Hike in 2 Months"/>
+</a>
+<br/><br/>
+<b>🧑‍💻 Rishikesh</b><br/>
+<code>4.5 Yrs Exp → DevOps/Cloud Engineer</code><br/>
+<img src="https://img.shields.io/badge/Hike-48%25%20in%202%20Months-28A745?style=flat-square"/>
+<br/>
+<sub>Interviews crack nahi ho rahe the.<br/>
+Walk-in drive → same day 3 rounds cleared.<br/>
+3 companies → zero rejections.</sub>
+</td>
+
+</tr>
+<tr>
+
+<!-- ── CARD 4: SARIKA ── -->
+<td align="center" width="33%">
+<a href="https://www.youtube.com/watch?v=6ImHPktuYHA&t=1s" target="_blank">
+<img src="https://img.youtube.com/vi/6ImHPktuYHA/mqdefault.jpg"
+     width="260" style="border-radius:8px; border:2px solid #FF6B35;"
+     alt="Sarika — Accenture to VISA 250%+ Growth"/>
+</a>
+<br/><br/>
+<b>🧑‍💻 Sarika</b><br/>
+<code>Accenture → IBM → VISA</code><br/>
+<img src="https://img.shields.io/badge/Package-~32--33%20LPA%20(250%25%2B%20Growth)-28A745?style=flat-square"/>
+<br/>
+<sub>EEE background → IT → DevOps → VISA.<br/>
+1 month mein VISA + AmEx dono offers.<br/>
+₹5 Lakh joining bonus + 250%+ career growth.</sub>
+</td>
+
+<!-- ── CARD 5: GIRIRAJ ── -->
+<td align="center" width="33%">
+<a href="https://www.youtube.com/watch?v=I4kSCINMRvQ&t=35s" target="_blank">
+<img src="https://img.youtube.com/vi/I4kSCINMRvQ/mqdefault.jpg"
+     width="260" style="border-radius:8px; border:2px solid #FF6B35;"
+     alt="Giriraj — 3.6 LPA to 13 LPA, 260%+ Growth"/>
+</a>
+<br/><br/>
+<b>🧑‍💻 Giriraj</b><br/>
+<code>3.6 LPA → 13 LPA (Tata Steel)</code><br/>
+<img src="https://img.shields.io/badge/Growth-260%25%20in%203%20Years-28A745?style=flat-square"/>
+<br/>
+<sub>Manual testing se DevOps — zero experience.<br/>
+20 interviews → 8 simultaneous offers.<br/>
+Journey: 3.6→4.8→6→8.5→13 LPA 🚀</sub>
+</td>
+
+<!-- ── CARD 6: RAVI YADU ── -->
+<td align="center" width="33%">
+<a href="https://www.youtube.com/watch?v=Cytnkv-y98c&t=104s" target="_blank">
+<img src="https://img.youtube.com/vi/Cytnkv-y98c/mqdefault.jpg"
+     width="260" style="border-radius:8px; border:2px solid #FF6B35;"
+     alt="Ravi Yadu — Linux Admin to Cloud Architect 40 LPA"/>
+</a>
+<br/><br/>
+<b>🧑‍💻 Ravi Yadu</b><br/>
+<code>Linux Admin (10+ Yrs) → Cloud Architect</code><br/>
+<img src="https://img.shields.io/badge/Package-~40%20LPA%20(Architect)-28A745?style=flat-square"/>
+<br/>
+<sub>10+ yrs IT exp — Linux Admin se Architect.<br/>
+Product-based company join kiya ~40 LPA.<br/>
+Ek aur 41 LPA+ offer bhi tha.</sub>
+</td>
+
+</tr>
+<tr>
+
+<!-- ── CARD 7: SIDDHARTH ── -->
+<td align="center" width="33%">
+<a href="https://www.youtube.com/watch?v=omXldCwovFk&t=24s" target="_blank">
+<img src="https://img.youtube.com/vi/omXldCwovFk/mqdefault.jpg"
+     width="260" style="border-radius:8px; border:2px solid #FF6B35;"
+     alt="Siddharth — Night Shift to DevOps Switch"/>
+</a>
+<br/><br/>
+<b>🧑‍💻 Siddharth</b><br/>
+<code>1.8 Yrs Exp → DevOps Switch</code><br/>
+<img src="https://img.shields.io/badge/Target-12%20LPA%20(April--May)-007BFF?style=flat-square"/>
+<br/>
+<sub>Mahenge courses se koi result nahi mila.<br/>
+Night shift ke baad seedha 8 AM class.<br/>
+Mock interviews se confidence build hua.</sub>
+</td>
+
+<!-- ── CARD 8: SAKLIM ── -->
+<td align="center" width="33%">
+<a href="https://www.youtube.com/watch?v=y3pd89lr_PU" target="_blank">
+<img src="https://img.youtube.com/vi/y3pd89lr_PU/mqdefault.jpg"
+     width="260" style="border-radius:8px; border:2px solid #FF6B35;"
+     alt="Saklim — B.Tech Final Year to Cloud DevOps"/>
+</a>
+<br/><br/>
+<b>🧑‍💻 Saklim</b><br/>
+<code>B.Tech Final Year → Cloud & DevOps</code><br/>
+<img src="https://img.shields.io/badge/Target-8--12%20LPA%20(Fresher)-007BFF?style=flat-square"/>
+<br/>
+<sub>Coding mein interest nahi → Cloud choose kiya.<br/>
+Docker, Terraform, AWS practical clear hai.<br/>
+Walk-in drives attend karne ki strategy.</sub>
+</td>
+
+<!-- ── CARD 9: DEEPENDRA ── -->
+<td align="center" width="33%">
+<a href="https://www.youtube.com/watch?v=LSeC9jQh0oM" target="_blank">
+<img src="https://img.youtube.com/vi/LSeC9jQh0oM/mqdefault.jpg"
+     width="260" style="border-radius:8px; border:2px solid #FF6B35;"
+     alt="Deependra — Developer to DevOps Cloud Shift"/>
+</a>
+<br/><br/>
+<b>🧑‍💻 Deependra</b><br/>
+<code>Developer → DevOps/Cloud Transition</code><br/>
+<img src="https://img.shields.io/badge/Status-Learning%20Phase-FF6B35?style=flat-square"/>
+<br/>
+<sub>Better package + future growth ke liye shift.<br/>
+Startup bhi Cloud focus karne bol rahi hai.<br/>
+AI notes tool: class ke baad auto Q&A.</sub>
+</td>
+
+</tr>
+</table>
+
+</div>
+
 
 ### 🌟 Sample Transformations from CloudDevOpsHub Students
 
