@@ -206,19 +206,6 @@ AI notes tool: class ke baad auto Q&A.</sub>
 </div>
 
 
-### 🌟 Sample Transformations from CloudDevOpsHub Students
-
-| Student | Before | After | Jump |
-|---------|--------|-------|------|
-| 💼 Ravi Yadu. (Indore) | Support — ₹4.5 LPA | DevOps Engineer at MNC — ₹40 LPA | **+₹9.5 LPA** |
-| 💼 Priya S. (Bangalore) | Support Engineer — ₹6 LPA | Cloud Engineer at Product Company — ₹18 LPA | **+₹12 LPA** |
-| 💼 Amit K. (Hyderabad) | Linux Admin — ₹7 LPA | Senior DevOps Engineer — ₹22 LPA | **+₹15 LPA** |
-| 💼 Sneha R. (Pune) | Fresher BCA Graduate — ₹0 | Junior Cloud Engineer — ₹8.5 LPA | **First Job!** |
-| 💼 Vikram P. (Delhi) | Java Developer — ₹9 LPA | DevOps Architect — ₹32 LPA | **+₹23 LPA** |
-| 💼 Neha T. (Mumbai) | Non-IT Background — ₹0 | AWS Cloud Engineer — ₹12 LPA | **Career Switch!** |
-| 💼 Suresh B. (Chennai) | System Admin — ₹8 LPA | Cloud DevOps Lead — ₹28 LPA | **+₹20 LPA** |
-| 💼 Kavita L. (Noida) | Python Developer — ₹11 LPA | MLOps Engineer — ₹35 LPA | **+₹24 LPA** |
-
 ### 📊 Success Story Stats
 
 ```
