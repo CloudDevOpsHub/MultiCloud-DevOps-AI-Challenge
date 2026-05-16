@@ -24,6 +24,34 @@
 
 ---
 
+<div align="center">
+<table><tr>
+
+<!-- ──  STEP -1 FAQ VIDEO for Multi Cloud + DevOps with AI Program ── -->
+<td align="center" width="25%">
+<a href="https://youtu.be/dexNHr0T55s" target="_blank">
+<img src="https://img.youtube.com/vi/dexNHr0T55s/mqdefault.jpg"
+     width="200" style="border-radius:10px; border:3px solid #FF0000;"
+     alt="15-Min FAQ All Questions Answered"/>
+</a>
+<br/><br/>
+<img src="https://img.shields.io/badge/🔴%20MUST%20WATCH-15--Min%20FAQ-FF0000?style=for-the-badge"/>
+<br/><br/>
+<b>15-Min FAQ — All Q&A Answered</b><br/>
+<sub>Every question about the program<br/>
+answered in 15 minutes. Fees, schedule,<br/>
+eligibility, recordings & more.</sub><br/><br/>
+<img src="https://img.shields.io/badge/⏱️%20Duration-15%20Minutes-FF0000?style=flat-square"/>
+<br/><br/>
+<a href="https://youtu.be/dexNHr0T55s">
+<img src="https://img.shields.io/badge/▶️%20Watch%20FAQ-Click%20Here-FF0000?style=flat-square&logo=youtube&logoColor=white"/>
+</a>
+</td>
+
+</tr></table>
+</div>
+
+
 ## 🎓 [→ START HERE: Open Session-0 to Accept the Challenge](./Session-00-Program-Kickoff/README.md)
 
 
