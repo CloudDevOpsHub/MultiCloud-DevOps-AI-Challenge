@@ -27,25 +27,29 @@
 <div align="center">
 <table><tr>
 
-<!-- ──  STEP -1 FAQ VIDEO for Multi Cloud + DevOps with AI Program ── -->
-<td align="center" width="25%">
+<!-- ── BOX: STEP -1 FAQ VIDEO for Multi Cloud + DevOps with AI Session's── -->
+<td align="center" width="480">
+<br/>
 <a href="https://youtu.be/dexNHr0T55s" target="_blank">
-<img src="https://img.youtube.com/vi/dexNHr0T55s/mqdefault.jpg"
-     width="200" style="border-radius:10px; border:3px solid #FF0000;"
+<img src="https://img.youtube.com/vi/dexNHr0T55s/maxresdefault.jpg"
+     width="460" style="border-radius:14px; border:4px solid #FF0000;"
      alt="15-Min FAQ All Questions Answered"/>
 </a>
 <br/><br/>
-<img src="https://img.shields.io/badge/🔴%20MUST%20WATCH-15--Min%20FAQ-FF0000?style=for-the-badge"/>
+<img src="https://img.shields.io/badge/🔴%20MUST%20WATCH-15--Min%20FAQ%20Video-FF0000?style=for-the-badge&logoColor=white"/>
 <br/><br/>
-<b>15-Min FAQ — All Q&A Answered</b><br/>
-<sub>Every question about the program<br/>
-answered in 15 minutes. Fees, schedule,<br/>
-eligibility, recordings & more.</sub><br/><br/>
-<img src="https://img.shields.io/badge/⏱️%20Duration-15%20Minutes-FF0000?style=flat-square"/>
+<h3>15-Min FAQ — All Questions Answered</h3>
+<p>Every question about the program answered in 15 minutes.<br/>
+Fees · Schedule · Eligibility · Recordings · Placement Support & more.</p>
+<br/>
+<img src="https://img.shields.io/badge/⏱️%20Duration-15%20Minutes-FF0000?style=flat-square&logoColor=white"/>
+&nbsp;&nbsp;
+<img src="https://img.shields.io/badge/📺%20Platform-YouTube-FF0000?style=flat-square&logo=youtube&logoColor=white"/>
 <br/><br/>
 <a href="https://youtu.be/dexNHr0T55s">
-<img src="https://img.shields.io/badge/▶️%20Watch%20FAQ-Click%20Here-FF0000?style=flat-square&logo=youtube&logoColor=white"/>
+<img src="https://img.shields.io/badge/▶️%20%20Watch%20FAQ%20Now%20%20▶️-Click%20Here%20to%20Watch-FF0000?style=for-the-badge&logo=youtube&logoColor=white"/>
 </a>
+<br/><br/>
 </td>
 
 </tr></table>
