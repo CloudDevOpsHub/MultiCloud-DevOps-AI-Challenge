@@ -21,6 +21,102 @@
 
 ## ▶️ Watch These BEFORE Your First Session
 
+## ▶️ Watch These BEFORE Your First Session
+
+<div align="center">
+
+<table>
+<tr>
+
+<!-- ── BOX 1: DAY 0 OVERVIEW ── -->
+<td align="center" width="25%">
+<a href="https://www.youtube.com/watch?v=oe7Iq2ByXWM&list=PLG7MCdO2f2e-2rZNJBTnUL7oLP-dwCXaS&index=3" target="_blank">
+<img src="https://img.youtube.com/vi/oe7Iq2ByXWM/mqdefault.jpg"
+     width="200" style="border-radius:10px; border:3px solid #FF0000;"
+     alt="Day 0 Program Overview"/>
+</a>
+<br/><br/>
+<img src="https://img.shields.io/badge/🔴%20MUST%20WATCH-Day%200%20Overview-FF0000?style=for-the-badge"/>
+<br/><br/>
+<b>Day 0 — Program Overview</b><br/>
+<sub>Everything about the 55-session program.<br/>
+What you will learn, how it works,<br/>
+and what to expect from Day 1.</sub><br/><br/>
+<img src="https://img.shields.io/badge/⏱️%20Duration-30%20Minutes-FF0000?style=flat-square"/>
+<br/><br/>
+<a href="https://www.youtube.com/watch?v=oe7Iq2ByXWM&list=PLG7MCdO2f2e-2rZNJBTnUL7oLP-dwCXaS&index=3">
+<img src="https://img.shields.io/badge/▶️%20Watch%20Now-Click%20Here-FF0000?style=flat-square&logo=youtube&logoColor=white"/>
+</a>
+</td>
+
+<!-- ── BOX 2: FAQ VIDEO ── -->
+<td align="center" width="25%">
+<a href="https://youtu.be/dexNHr0T55s" target="_blank">
+<img src="https://img.youtube.com/vi/dexNHr0T55s/mqdefault.jpg"
+     width="200" style="border-radius:10px; border:3px solid #FF0000;"
+     alt="15-Min FAQ All Questions Answered"/>
+</a>
+<br/><br/>
+<img src="https://img.shields.io/badge/🔴%20MUST%20WATCH-15--Min%20FAQ-FF0000?style=for-the-badge"/>
+<br/><br/>
+<b>15-Min FAQ — All Q&A Answered</b><br/>
+<sub>Every question about the program<br/>
+answered in 15 minutes. Fees, schedule,<br/>
+eligibility, recordings & more.</sub><br/><br/>
+<img src="https://img.shields.io/badge/⏱️%20Duration-15%20Minutes-FF0000?style=flat-square"/>
+<br/><br/>
+<a href="https://youtu.be/dexNHr0T55s">
+<img src="https://img.shields.io/badge/▶️%20Watch%20FAQ-Click%20Here-FF0000?style=flat-square&logo=youtube&logoColor=white"/>
+</a>
+</td>
+
+<!-- ── BOX 3: LAST BATCH PLAYLIST ── -->
+<td align="center" width="25%">
+<a href="https://www.youtube.com/playlist?list=PLG7MCdO2f2e-ZiA8tTSiV-H4B8lBiy88P" target="_blank">
+<img src="https://img.youtube.com/vi/Cytnkv-y98c/mqdefault.jpg"
+     width="200" style="border-radius:10px; border:3px solid #FFC107;"
+     alt="Last Batch Full Playlist 23 Videos"/>
+</a>
+<br/><br/>
+<img src="https://img.shields.io/badge/🟡%20RECOMMENDED-Last%20Batch%20Playlist-FFC107?style=for-the-badge&logoColor=black"/>
+<br/><br/>
+<b>Last Batch — Full Playlist Preview</b><br/>
+<sub>Watch actual sessions from the last<br/>
+completed batch. 23 last-day recordings.<br/>
+See before you decide to join.</sub><br/><br/>
+<img src="https://img.shields.io/badge/📺%2023%20Videos-55%20Sessions-FFC107?style=flat-square&logoColor=black"/>
+<br/><br/>
+<a href="https://www.youtube.com/playlist?list=PLG7MCdO2f2e-ZiA8tTSiV-H4B8lBiy88P">
+<img src="https://img.shields.io/badge/▶️%20Full%20Playlist-Click%20Here-FFC107?style=flat-square&logo=youtube&logoColor=black"/>
+</a>
+</td>
+
+<!-- ── BOX 4: SUCCESS STORIES ── -->
+<td align="center" width="25%">
+<a href="https://www.clouddevopshub.com/s/pages/successstories" target="_blank">
+<img src="https://img.youtube.com/vi/6ImHPktuYHA/mqdefault.jpg"
+     width="200" style="border-radius:10px; border:3px solid #28A745;"
+     alt="1000+ Student Success Stories"/>
+</a>
+<br/><br/>
+<img src="https://img.shields.io/badge/🟢%20INSPIRING-1000%2B%20Success%20Stories-28A745?style=for-the-badge"/>
+<br/><br/>
+<b>1000+ Student Success Stories</b><br/>
+<sub>Real students. Real packages. Real proof.<br/>
+From ₹3.6 LPA to ₹40 LPA journeys.<br/>
+Read before joining — be inspired.</sub><br/><br/>
+<img src="https://img.shields.io/badge/🏆%201000%2B%20Stories-₹5%20to%20₹40%20LPA-28A745?style=flat-square"/>
+<br/><br/>
+<a href="https://www.clouddevopshub.com/s/pages/successstories">
+<img src="https://img.shields.io/badge/🏆%20Read%20Stories-Click%20Here-28A745?style=flat-square&logoColor=white"/>
+</a>
+</td>
+
+</tr>
+</table>
+
+</div>
+
 | Priority | Video | Link | Duration |
 |----------|-------|------|----------|
 | 🔴 **MUST WATCH** | Day 0 Program Overview | [▶️ Watch Now](https://www.youtube.com/watch?v=oe7Iq2ByXWM&list=PLG7MCdO2f2e-2rZNJBTnUL7oLP-dwCXaS&index=3) | 30 min |
