@@ -58,6 +58,68 @@ Fees · Schedule · Eligibility · Recordings · Placement Support & more.</p>
 
 ## 🎓 [→ START HERE: Open Session-0 to Accept the Challenge](./Session-00-Program-Kickoff/README.md)
 
+## 🗺️ 10-Module Roadmap — 55 Sessions at a Glance
+
+| # | Module | Sessions | Tasks | Duration | 💰 After |
+|---|--------|----------|-------|----------|---------|
+| 🧱 1 | Foundation: DevOps + Cloud + AI | S00–S04 | Task 001–010 | Week 1 | Base for all roles |
+| 🐧 2 | Linux Administration + GCP | S05–S09 | Task 011–020 | Week 2 | ₹5–10 LPA |
+| ☁️ 3 | AWS Top 10 Services + 10 Practicals | S10–S21 | Task 021–044 | Weeks 3–5 | ₹8–15 LPA |
+| ⚙️ 4 | CI/CD — Git, GitHub & Jenkins | S22–S29 | Task 045–060 | Weeks 5–7 | ₹10–18 LPA |
+| 🐳 5 | Docker + Kubernetes + GKE + Monitoring | S30–S37 | Task 061–076 | Weeks 7–9 | ₹12–22 LPA |
+| 🔧 6 | Ansible + Terraform + IaC Automation | S38–S44 | Task 077–090 | Weeks 9–10 | ₹15–28 LPA |
+| 💼 7 | Career Prep — Resume + LinkedIn | S45–S46 | Task 091–094 | Week 11 | Interview Ready |
+| 🤖 8 | Azure DevOps + AI Integration | S47–S49 | Task 095–100 | Week 11–12 | ₹18–35 LPA |
+| 🏆 9 | 8 Real-Time Live Projects | S50–S57 | Task 101–116 | Weeks 12–13 | ₹20–50 LPA |
+| 🎓 10 | Graduation + 8 Mock Interviews | S58 + Wednesdays | — | Every Wed 8 PM | 🏆 Placed! |
+
+---
+
+### 📦 Module Highlights
+
+**🧱 M1 — Foundation** `S00–S04` · DevOps lifecycle · Cloud basics · AI tools (Copilot, ChatGPT, Gemini) · Prompt Engineering
+
+**🐧 M2 — Linux + GCP** `S05–S09` · 100+ Linux commands · VM creation · SSH · Permissions · GCP Cloud Shell
+→ 🎯 *Apply for GCP + Linux roles at ₹5–10 LPA after this module*
+
+**☁️ M3 — AWS** `S10–S21` · EC2 · IAM · S3 · VPC · RDS · ELB · CloudWatch · Lambda + 10 Practicals
+→ 🎯 *Apply for AWS Cloud Engineer roles at ₹8–15 LPA after this module*
+
+**⚙️ M4 — CI/CD** `S22–S29` · Git + GitHub · Jenkins Pipelines · Maven · Jenkinsfile · Master-Slave
+→ 🎯 *Apply for DevOps Engineer roles at ₹10–18 LPA after this module*
+
+**🐳 M5 — Containers** `S30–S37` · Docker · Dockerfile · Kubernetes · GKE · Prometheus · Grafana + Helm
+→ 🎯 *Apply for Kubernetes/Container roles at ₹12–22 LPA after this module*
+
+**🔧 M6 — IaC + Automation** `S38–S44` · Terraform · Ansible · Bash Scripting · Python + boto3
+→ 🎯 *Apply for DevOps + IaC roles at ₹15–28 LPA after this module*
+
+**💼 M7 — Career** `S45–S46` · ATS Resume · LinkedIn · Naukri · Elective Topic (DevSecOps / GitHub Actions / Splunk)
+
+**🤖 M8 — Azure + AI** `S47–S49` · Azure 5 DevOps Services · Advanced Prompting · AI Agents · Copilot
+→ 🎯 *Apply for Multi-Cloud + AI roles at ₹18–35 LPA after this module*
+
+**🏆 M9 — 8 Live Projects** `S50–S57`
+
+| Project | Stack |
+|---------|-------|
+| 1. CI/CD Pipeline | Jenkins + Docker + GitHub |
+| 2. Microservices on GKE | K8s + GCP + HPA |
+| 3. 40 AWS Resources (Terraform) | Terraform + AWS |
+| 4. DevSecOps | Trivy + SonarQube |
+| 5. Azure DevOps CI/CD | Azure 5 Services |
+| 6. AI API Integration | Gemini + Python + Cloud |
+| 7. MLOps in EKS | Python + FastAPI + EKS |
+| 8. AI OPS Automation | AIOps + Azure + Dashboard |
+
+→ 🎯 *Target: Senior DevOps / Architect roles at ₹20–50 LPA*
+
+**🎓 M10 — Mock Interviews** Every Wednesday 8 PM IST · 8 rounds: Linux → AWS → CI/CD → K8s → IaC → Azure → AI → Full Mock
+
+---
+## 🎓 [→ START HERE: Open Session-0 to Accept the Challenge](./Session-00-Program-Kickoff/README.md)
+---
+
 
 ## 🏆 1000+ Success Stories — Real Engineers, Real Packages
 
