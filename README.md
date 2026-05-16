@@ -350,16 +350,7 @@ You are never alone in your learning journey.
 ```
 🔒 Our Guarantee:
 
-If you attend every session, complete all tasks, and you are still
-not satisfied with the quality of learning (Must have 90% of the Attainance) —
-
-→ You will be a Module Expert
-→ No questions asked
-→ No forms to fill
-→ No arguments
-
-This is how confident we are in the program quality.
-No other DevOps program in India offers this.
+As Vikas will only take all Live session So Providing 100% Satisfaction Gurantee
 ```
 
 ### ✅ Reason #3 — 1000-Day Recording Access
