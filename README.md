@@ -496,7 +496,7 @@ By Task-116, you have 116 documented hands-on activities.
 That is your proof of work. That is your portfolio evidence.
 ```
 
-### ✅ Reason #9 — 58,000+ Community (Your Career Network)
+### ✅ Reason #9 —CloudDevOpsHub Community (Your Career Network)
 
 ```
 India's Largest Cloud & DevOps Community
@@ -511,15 +511,15 @@ India's Largest Cloud & DevOps Community
 Network is NOT just a nice-to-have. It IS the career accelerator.
 ```
 
-### ✅ Reason #10 — Placement Support Until You Get the Offer
+### ✅ Reason #10 — Multiple Referrals in WhatsApp Groups
 
 ```
-✅ ATS Resume Review by Vikas personally
+✅ ATS Resume Review by Vikas personally (Last 30 Day's Unlimited)
 ✅ LinkedIn profile optimization (headline, summary, skills, projects)
 ✅ Naukri profile update for maximum visibility
 ✅ Mock interview feedback for each student
-✅ Company referrals from the alumni network
-✅ Job postings shared directly in community
+✅ Company referrals from the network
+✅ Job postings shared directly in the community
 ✅ Salary negotiation guidance
 ✅ Offer letter review and joining guidance
 
