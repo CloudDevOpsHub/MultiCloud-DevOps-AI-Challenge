@@ -235,3 +235,451 @@ A: Six major incidents were identified (API request failures, pull request failu
 - **Azure coverage**: Vikas confirmed he will cover Azure DevOps and provide a short comparison of main Azure vs. AWS services; participants recommended to start with the **AZ-900** fundamentals video (~9 hours) for Azure basics. 
 - **Resume tip for SRE roles**: Add the word **"observability"** to the resume; include HPA as a Kubernetes skill line item. 
 - **Interview prep**: Review the golden signals framework (LETS) and be able to explain the Prometheus-Grafana architecture, data flow, and alerting setup. 
+
+
+# 🎤 Interview Questions & Answers
+
+> **Interview tip:** Don't memorize the answer word-for-word. Understand the **flow, purpose and troubleshooting approach** behind each concept.
+
+### 1. What is Prometheus?
+
+**Answer:**
+Prometheus is an open-source monitoring and metrics collection system. It collects time-series metrics from different targets and stores them so they can be queried later. In a Kubernetes environment, Prometheus can collect metrics related to nodes, pods, containers, and Kubernetes objects.
+
+---
+
+### 2. What is Grafana and why is it used with Prometheus?
+
+**Answer:**
+Grafana is a visualization and monitoring platform. It connects to Prometheus as a data source, uses **PromQL** to query metrics, and displays the results through dashboards and panels.
+The typical flow is:
+**Kubernetes → Prometheus → Grafana → Dashboard**
+
+---
+
+### 3. What is PromQL?
+
+**Answer:**
+PromQL stands for **Prometheus Query Language**. It is used to query and analyze metrics stored in Prometheus.
+For example, PromQL can be used to retrieve CPU, memory, network, pod, or node-related metrics and display them in Grafana.
+
+---
+
+### 4. What is kube-state-metrics?
+
+**Answer:**
+`kube-state-metrics` generates metrics about the state of Kubernetes objects.
+It can provide information about resources such as:
+
+- Pods
+- Deployments
+- ReplicaSets
+- Nodes
+- Namespaces
+
+It is useful when we need to understand the state of Kubernetes resources rather than just operating-system-level metrics.
+
+---
+
+### 5. What is Node Exporter?
+
+**Answer:**
+Node Exporter exposes infrastructure-level metrics from machines or nodes.
+It can provide metrics related to:
+
+- CPU
+- Memory
+- Disk
+- Network
+- System resources
+
+Prometheus collects these metrics and Grafana can visualize them.
+
+---
+
+### 6. Why is Helm used for installing Prometheus and Grafana?
+
+**Answer:**
+Helm is a package manager for Kubernetes. Instead of manually creating many Kubernetes YAML files, we can use a Helm chart to deploy and manage applications.
+For Prometheus and Grafana, Helm simplifies:
+
+- Installation
+- Configuration
+- Upgrades
+- Version management
+- Resource deployment
+
+---
+
+### 7. What are Grafana dashboards and panels?
+
+**Answer:**
+A **dashboard** is a collection of monitoring visualizations, while a **panel** is an individual visualization inside that dashboard.
+For example, a Kubernetes dashboard might contain separate panels for:
+
+- CPU utilization
+- Memory utilization
+- Network traffic
+- Pod status
+- Node status
+
+Each panel can use a PromQL query to retrieve its data.
+
+---
+
+### 8. What is Grafana alerting?
+
+**Answer:**
+Grafana alerting allows us to define conditions under which Grafana should generate an alert.
+For example, we could configure an alert when CPU utilization remains above a defined threshold.
+The general process is:
+**Metric → Query → Condition → Alert Rule → Contact Point → Notification**
+
+---
+
+### 9. What are contact points in Grafana?
+
+**Answer:**
+Contact points define where Grafana sends alert notifications.
+Depending on the configuration, notifications can be sent through mechanisms such as:
+
+- Email
+- Slack
+- Webhooks
+
+For example, a production alert can be configured to notify the operations team through email or another supported notification channel.
+
+---
+
+### 10. What are the four golden signals of monitoring?
+
+**Answer:**
+The four golden signals are:
+
+1. **Latency**: How long a request takes.
+2. **Traffic**: The amount of demand on the system.
+3. **Errors**: The number or rate of failed requests.
+4. **Saturation**: How much a resource is being utilized.
+
+They provide a useful framework for deciding what application-level metrics should be monitored.
+
+---
+
+---
+
+# 🔥 Scenario-Based Interview Questions & Answers
+
+> **How to answer scenarios:** Start with what you would check first, explain your troubleshooting sequence, and finish with the likely action or resolution.
+
+### 1. Scenario: CPU usage of a Kubernetes node suddenly becomes very high. How would you investigate it?
+
+**Answer:**
+I would first check the node and pod metrics in Grafana. I would identify whether the CPU consumption is coming from a particular pod, container, or the node itself.
+I would then:
+
+1. Check CPU metrics in Grafana.
+2. Identify the affected node/pod.
+3. Verify the pod resource consumption using Kubernetes commands.
+4. Check whether there was a recent deployment or traffic increase.
+5. Review application logs if necessary.
+6. Determine whether resource limits/requests need adjustment or whether scaling is required.
+
+---
+
+### 2. Scenario: Grafana is running, but you cannot see Prometheus metrics. What would you check?
+
+**Answer:**
+I would first verify that Prometheus is running correctly.
+I would check:
+
+1. Prometheus pod status.
+2. Prometheus service.
+3. Grafana's configured data source.
+4. Whether Grafana can communicate with Prometheus.
+5. Whether the Prometheus data source is showing as healthy.
+6. Whether the PromQL query actually returns data.
+
+The problem could be related to the data source configuration, connectivity, Prometheus itself, or the query.
+
+---
+
+### 3. Scenario: Your Grafana dashboard is showing "No Data." What would you do?
+
+**Answer:**
+I would troubleshoot it systematically.
+First, I would check whether Prometheus contains the required metric. Then I would test the PromQL query directly in Grafana's query interface.
+I would verify:
+
+- Metric name
+- PromQL syntax
+- Time range
+- Prometheus data source
+- Labels and filters
+- Prometheus target status
+
+If the metric doesn't exist in Prometheus, I would investigate the relevant exporter or metric collection component.
+
+---
+
+### 4. Scenario: You need to monitor CPU and memory for all Kubernetes nodes. How would you design the Grafana dashboard?
+
+**Answer:**
+I would create a Kubernetes infrastructure dashboard with separate panels for CPU and memory.
+For example:
+
+- Node CPU utilization
+- Node memory utilization
+- Node availability
+- Network usage
+- Disk usage
+
+I would use PromQL queries to retrieve the required metrics and configure Grafana panels to make comparison between nodes easy.
+
+---
+
+### 5. Scenario: Your team is receiving hundreds of alerts every day, and engineers are ignoring them. What would you do?
+
+**Answer:**
+This is an example of **alert fatigue**.
+I would review the existing alert rules and determine which alerts are genuinely actionable.
+I would:
+
+- Remove unnecessary alerts.
+- Adjust thresholds.
+- Increase evaluation duration where appropriate.
+- Separate warning and critical alerts.
+- Configure alerts according to business impact.
+- Use maintenance silences when required.
+
+The objective is to ensure that when an engineer receives an alert, it actually deserves attention.
+
+---
+
+### 6. Scenario: You are performing planned maintenance and Grafana keeps sending alerts. How would you handle it?
+
+**Answer:**
+I would use **Grafana alert silencing** for the planned maintenance period.
+Before starting maintenance, I would configure a silence for the relevant alerts and duration. After maintenance is completed, the silence would expire or be removed.
+This prevents unnecessary notifications while still keeping the alert rules configured.
+
+---
+
+### 7. Scenario: A company wants only the monitoring team to manage Grafana dashboards. Developers should only be able to view them. How would you configure Grafana?
+
+**Answer:**
+I would use Grafana's **users, teams, and roles**.
+I would:
+
+- Create a monitoring team with appropriate editing/administrative permissions.
+- Add monitoring engineers to that team.
+- Give developers viewer-level access.
+- Avoid giving administrative permissions to users who don't need them.
+
+This follows the principle of giving users only the access required for their responsibilities.
+
+---
+
+### 8. Scenario: An employee who originally configured automated monitoring leaves the company. The automation stops because it used that employee's account. How would you prevent this?
+
+**Answer:**
+I would use a **service account** for automation instead of depending on an individual employee account.
+The service account provides a stable identity for automated processes and can be assigned only the permissions required for the automation.
+This reduces dependency on individual users and makes the system easier to maintain.
+
+---
+
+### 9. Scenario: You want Grafana to send an email whenever a critical monitoring condition occurs. What would you configure?
+
+**Answer:**
+I would configure Grafana alerting with an email-based contact point.
+The process would be:
+
+1. Create the required alert rule.
+2. Define the alert condition.
+3. Configure SMTP settings.
+4. Create an email contact point.
+5. Associate the contact point with the appropriate alert/notification policy.
+6. Test the alert.
+
+The final flow would be:
+**Metric → Alert Rule → Contact Point → SMTP → Email**
+
+---
+
+### 10. Scenario: Your application is experiencing slow responses, but CPU and memory usage appear normal. What metrics would you investigate?
+
+**Answer:**
+I would not assume that normal CPU and memory mean the application is healthy. I would investigate the **four golden signals**.
+I would check:
+
+- **Latency**: Are requests taking longer than normal?
+- **Traffic**: Has request volume increased?
+- **Errors**: Are requests failing?
+- **Saturation**: Is another resource becoming a bottleneck?
+
+I would then correlate these metrics with application logs and infrastructure metrics to identify the actual bottleneck.
+
+---
+
+---
+
+# 🧠 Quick Revision Sheet
+
+## Prometheus vs Grafana
+
+| Prometheus | Grafana |
+|---|---|
+| Collects metrics | Visualizes metrics |
+| Stores time-series data | Queries data sources |
+| Uses PromQL | Builds dashboards and panels |
+| Focuses on monitoring data | Focuses on visualization and alerting |
+
+### Monitoring Flow
+
+**Kubernetes → Metrics Components → Prometheus → PromQL → Grafana → Dashboard → Alert → Notification**
+
+---
+`
+## 🔑 Core Concepts to Remember
+
+| Concept | Simple Explanation |
+|---|---|
+| **Prometheus** | Collects and stores monitoring metrics |
+| **Grafana** | Visualizes metrics through dashboards |
+| **PromQL** | Query language used with Prometheus |
+| **kube-state-metrics** | Provides Kubernetes object/state metrics |
+| **Node Exporter** | Provides node-level infrastructure metrics |
+| **Helm** | Packages and simplifies Kubernetes application deployment |
+| **Dashboard** | Collection of monitoring visualizations |
+| **Panel** | Individual visualization inside a dashboard |
+| **Contact Point** | Destination for alert notifications |
+| **SMTP** | Used for email notification delivery |
+| **Service Account** | Stable identity for automated processes |
+| **Alert Silencing** | Temporarily prevents notifications during expected events |
+| **Alert Fatigue** | Engineers becoming desensitized because of excessive alerts |
+
+---
+
+## 🚦 Four Golden Signals
+
+These four signals provide a useful framework for application monitoring:
+
+| Signal | Meaning |
+|---|---|
+| 🕐 **Latency** | How long requests take |
+| ❌ **Errors** | Number or rate of failed requests |
+| 📈 **Traffic** | Amount of demand or requests |
+| 🔋 **Saturation** | How heavily a resource is being utilized |
+
+### Easy Memory Trick
+
+> **Latency + Traffic + Errors + Saturation = Golden Signals**
+
+---
+
+## 🛠️ Production Monitoring Mindset
+
+A useful way to think about a DevOps monitoring workflow is:
+
+```text
+BUILD
+  ↓
+CONFIGURE
+  ↓
+MONITOR
+  ↓
+ALERT
+  ↓
+TROUBLESHOOT
+  ↓
+OPERATE / HANDOVER
+```
+
+Monitoring is not just about making attractive graphs. The real goal is to make system behavior understandable and turn abnormal conditions into an operational response.
+
+---
+
+# ⚠️ Important Note About HPA
+
+The session introduced **Horizontal Pod Autoscaling (HPA)** as an objective and the cluster was created with scaling practice in mind.
+
+However, the source transcript explicitly indicates that the detailed HPA practical was **not fully covered in this session** and was planned for further discussion.
+
+> **For interview preparation:** Treat HPA implementation as a topic planned for the next discussion rather than claiming that the complete HPA practical was demonstrated here.
+
+---
+
+# ✅ Student Revision Checklist
+
+- [ ] Understand Prometheus and Grafana roles
+- [ ] Understand the Kubernetes monitoring architecture
+- [ ] Understand Helm-based monitoring stack deployment
+- [ ] Understand Kubernetes namespaces
+- [ ] Understand Grafana Service exposure
+- [ ] Understand Grafana users, teams and roles
+- [ ] Understand service accounts
+- [ ] Understand dashboards and panels
+- [ ] Understand PromQL
+- [ ] Understand CPU, memory and network metrics
+- [ ] Understand Grafana alert rules
+- [ ] Understand contact points
+- [ ] Understand SMTP notifications
+- [ ] Understand alert silencing
+- [ ] Understand alert fatigue
+- [ ] Memorize the four golden signals
+- [ ] Practice all 10 interview questions
+- [ ] Practice all 10 scenario-based questions
+- [ ] Review the HPA scope carefully
+
+---
+
+# 💼 Interview Preparation Strategy
+
+For this session, focus on being able to explain these **five flows** without looking at notes:
+
+### 1. Monitoring Flow
+
+```text
+Kubernetes → Prometheus → Grafana
+```
+
+### 2. Query Flow
+
+```text
+Grafana Panel → PromQL → Prometheus → Metric Data
+```
+
+### 3. Alert Flow
+
+```text
+Metric → Query → Condition → Alert Rule
+```
+
+### 4. Notification Flow
+
+```text
+Alert Rule → Contact Point → SMTP / Notification Channel → Team
+```
+
+### 5. Production Operations Flow
+
+```text
+Monitor → Detect → Alert → Investigate → Troubleshoot → Resolve
+```
+
+If you can explain these five flows clearly, you understand the core of the session rather than merely remembering a collection of tool names. Humans do occasionally reward understanding over button-clicking.
+
+---
+
+## 📚 Session Source
+
+This GitHub study material was prepared from the **Session 37 / Grafana & Kubernetes monitoring session material provided for Batch 44**. The HPA scope has been kept explicit because the source material states that its detailed practical was not fully covered.
+
+---
+
+## 🌟 CloudDevOpsHub
+
+**Multi Cloud + DevOps with AI**
+
+> Learn → Practice → Build → Monitor → Troubleshoot → Prepare for Interviews
+
