@@ -4,9 +4,6 @@
 [![Batch: DevOps-44](https://img.shields.io/badge/Batch-DevOps--44-blueviolet?style=for-the-badge)](README.md)
 [![Date: 22nd July 2026 | 8:00 AM IST](https://img.shields.io/badge/Date-22nd%20July%202026%20%7C%208:00%20AM%20IST-success?style=for-the-badge)](README.md)
 
----
-> [⬅️ Day 02](Day-02-Git-GitHub-Advanced.md) | [🏠 Master Learning Index](README.md) | [Day 04 ➡️](Day-04-Jenkins-CI-Advanced.md)
----
 
 Multi-Cloud + DevOps with AI Bootcamp
 Module: Jenkins (Continuous Integration)
@@ -328,5 +325,3 @@ Linux is generally preferred for production Jenkins deployments due to better pe
 Cloud platforms such as AWS and GCP provide an ideal environment for learning and running Jenkins in real-world scenarios.
 Regular hands-on practice and documenting your learning on LinkedIn are essential habits for building a successful DevOps career.
 
----
-> [⬅️ Day 02](Day-02-Git-GitHub-Advanced.md) | [🏠 Master Learning Index](README.md) | [Day 04 ➡️](Day-04-Jenkins-CI-Advanced.md)
