@@ -1,4 +1,4 @@
-# 🚀 DevOps Batch-44 | Day 10: Docker Fundamentals & Containerization Basics
+# 🚀 Day-1 of Docker Batch-44 | 3rd Aug 2026 : Docker Fundamentals & Containerization Basics
 
 [![Module: Docker Containerization](https://img.shields.io/badge/Module-Docker-2496ED?style=for-the-badge&logo=docker)](README.md)
 [![Batch: DevOps-44](https://img.shields.io/badge/Batch-DevOps--44-blueviolet?style=for-the-badge)](README.md)
