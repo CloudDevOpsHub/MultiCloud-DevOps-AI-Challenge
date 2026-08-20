@@ -4,9 +4,6 @@
 [![Batch: DevOps-44](https://img.shields.io/badge/Batch-DevOps--44-blueviolet?style=for-the-badge)](README.md)
 [![Date: 3rd August 2026 | 8:00 AM IST](https://img.shields.io/badge/Date-3rd%20August%202026%20%7C%208:00%20AM%20IST-success?style=for-the-badge)](README.md)
 
----
-> [⬅️ Day 09](Day-09-Reverse-KT-Session.md) | [🏠 Master Learning Index](README.md) | [Day 11 ➡️](Day-11-Docker-Architecture-Commands.md)
----
 
 ## 📋 Key Outcomes
 
