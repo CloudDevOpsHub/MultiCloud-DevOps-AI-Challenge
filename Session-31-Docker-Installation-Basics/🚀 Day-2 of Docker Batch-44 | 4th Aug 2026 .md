@@ -101,5 +101,4 @@ The artifact details 20 practical real-world scenarios directly derived from the
 
 
 
----
-> [⬅️ Day 10](Day-10-Docker-Fundamentals.md) | [🏠 Master Learning Index](README.md) | [Day 12 ➡️](Day-12-Dockerfiles-Image-Creation.md)
+
