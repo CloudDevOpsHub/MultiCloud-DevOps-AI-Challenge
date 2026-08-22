@@ -1,0 +1,468 @@
+## Key Outcomes
+
+A live, interactive 2-hour workshop was conducted covering Terraform and Ansible fundamentals, Infrastructure as Code (IaC) concepts, and hands-on practicals including AWS account setup, Terraform CLI installation, and EC2 instance provisioning via Terraform. Participants ranged from freshers to experienced professionals (up to 15+ years). The session concluded with a walkthrough of the instructor's structured learning roadmap (Multi-Cloud + DevOps + AI) and course enrollment details.
+
+---
+
+## Session Logistics & Participants
+
+- **Date:** Saturday, 22nd August, 11:00 AM IST
+- **Platform:** Zoom (live, interactive)
+- **Attendees:** ~110–150 working professionals and learners; mix of freshers and experienced engineers (Linux admins, cloud engineers, developers, production support)
+- **Instructor:** Vikas (Principal Architect, PwC Bangalore)
+- **Language:** ~90% English, ~10% Hindi 
+- Session recorded by instructor; recording **not** shared with participants 
+- Participants kept on mute; raise-hand feature used to unmute and speak 
+- AI note-taking companion (Zoom LLM) used to generate summaries and interview questions every 60 minutes; shared via WhatsApp group 
+
+---
+
+## Core Concepts Covered
+
+### Infrastructure as Code (IaC)
+
+- **IaC definition:** Creating and managing infrastructure using code rather than manual UI-based actions 
+- **Key problem solved:** Manual infrastructure creation leads to ~40% human error rate, repeated tedious activities, and inability to recreate environments if the responsible engineer leaves 
+- **Benefits of IaC:**
+    - Same code reusable across dev, QA, and production environments via variables 
+    - Version-controlled infrastructure — code serves as institutional memory 
+    - Eliminates dependency on individual knowledge; any engineer can recreate infra from code 
+- **Popular IaC tools mentioned:** Terraform, AWS CloudFormation, ARM Templates (Azure), Chef, Puppet, Vagrant, SaltStack, Crossplane 
+- **Terraform identified as most popular** for DevOps roles — open source, free, multi-cloud, cloud-agnostic 
+- Terraform supports **7,102 providers** (AWS, Azure, GCP, Kubernetes, Alibaba, Oracle Cloud, Active Directory, and more) 
+
+### Terraform vs. Ansible
+
+- **Terraform:** Infrastructure provisioning tool (IaC) — used for one-time or first-time resource creation (EC2, VPC, S3, RDS, load balancers, databases, security groups) 
+- **Ansible:** Configuration management tool — used for repeated operational activities: package installation, user management, patching, backups, Java/Python installation, application deployment 
+- Both are **agentless** and **open source** 
+- Key distinction: Terraform is **immutable** for infrastructure changes (modifying a resource requires destroy + recreate); Ansible can make **mutable** changes directly without rebuilding infra 
+- Practical example: Adding a new user with Terraform would destroy and recreate the entire infra; Ansible adds the user directly without affecting existing infrastructure 
+- Bash/PowerShell/Python *can* perform similar tasks but lack Ansible's agentless SSH management, centralized credential handling, and scalability across thousands of servers 
+
+### Terraform Key Terminology
+
+- **Provider:** Enables communication between Terraform and cloud platforms (AWS, GCP, Azure); defined in `provider` block 
+- **Resources:** Cloud components to be created — EC2, S3, RDS, VPC, subnets, etc. 
+- **Variables:** Defined in `variable.tf`; allow the same code to be reused across environments by changing input values 
+- **Output:** Results of Terraform execution stored in `output.tf` file — success/failure status, resource details 
+- **State File (****`terraform.tfstate`****):** Stores the current state of infrastructure; acts as Terraform's memory — tracks what has been created 
+    - Must **not** be stored in GitHub — it is a binary/machine-readable file that GitHub would corrupt and cannot be edited via PRs 
+    - Should be stored as an **object in S3** (remote backend) 
+    - S3 **versioning** should be enabled so each state change creates a new version rather than overwriting 
+    - When multiple developers work in parallel, remote backend with **state locking** prevents sync conflicts 
+- **Modules:** Reusable, ready-made code templates — write once, reuse across projects 
+- **Data Source:** Retrieves information about existing cloud resources created outside the current Terraform configuration 
+- **Backend:** Remote storage for the state file (e.g., S3); prevents local-only storage and enables team collaboration 
+- **Dependency Graph:** Defines the order in which resources must be created (e.g., VPC → Subnet → EC2); Terraform uses this to sequence resource provisioning correctly 
+- **Workspace:** Allows managing multiple environments (dev, QA, prod) using a single Terraform codebase — each workspace maintains its own independent state file 
+- **CLI Commands:**
+    - `terraform init` — Downloads provider plugins and dependencies; locks the configuration 
+    - `terraform plan` — Previews what will be created/modified/destroyed; checks feasibility against AWS; saves plan to state file in memory 
+    - `terraform apply` — Executes the plan; creates resources; permanently saves state to state file 
+    - `terraform destroy` — Reads state file and deletes provisioned resources 
+
+### Terraform Language & History
+
+- Terraform created by **HashiCorp in 2014** 
+- Uses **HCL (HashiCorp Configuration Language)** — designed to be human-readable and simple; HashiCorp created it because no existing language met their needs 
+- **Zero code writing required** for DevOps engineers — ready-made code is available via Terraform Registry documentation and GitHub; engineers copy-paste and understand the code 
+
+---
+
+## Hands-On Practicals
+
+### AWS Account Setup
+
+- Participants directed to create a free AWS account via AWS Free Tier link 
+- Steps: provide email → verify OTP → set root password → add payment method (₹2 charge for verification) → select Basic/Free plan 
+- Participants confirmed login to AWS Console and shared screenshots in WhatsApp group 
+
+### Terraform CLI Installation (Windows)
+
+- Download Terraform binary (~32 MB ZIP) from official HashiCorp site 
+- Create a `bin` folder in C: drive; extract and place the Terraform binary there 
+- Open CMD from the bin folder path; run `terraform -v` to confirm installation (version 1.15.x confirmed) 
+- For **Linux:** three-command install via package manager 
+- For **Mac:** Homebrew command 
+
+### AWS CLI Installation
+
+- Download AWS CLI MSI installer (~47 MB) for Windows 
+- Run installer; verify by typing `aws` in CMD 
+- Configure AWS CLI: run `aws configure` → enter Access Key → Secret Key → default region (press Enter) → output format (press Enter) 
+
+### IAM User & Access Key Setup
+
+- Navigate to **IAM** (global service — no region selection needed) 
+- Create a new IAM user → assign to an admin group with full access policies (top 4 policies selected) 
+- Generate **Access Key:** Security Credentials → Create Access Key → select CLI use case → download CSV 
+- **Interview question highlighted:** Secret key can only be viewed/downloaded **once** — if lost, must regenerate 
+- Access key + secret key used in `aws configure` to integrate local Terraform with AWS 
+
+### EC2 Instance Provisioning via Terraform
+
+- Code cloned from instructor's GitHub repo using `git clone` 
+- Navigated to EC2 folder; `main.tf` file contains provider block (Terraform version, AWS provider version) and resource block (instance type, AMI, name) 
+- Ran `terraform init` → downloaded and verified HashiCorp AWS plugin 
+- Ran `terraform plan` → checked resource feasibility; state saved in memory 
+- Ran `terraform apply` → confirmed with `yes` → EC2 instance created in **22 seconds** in US-East-2 region 
+- State file (`terraform.tfstate`) created locally after apply; contains current infra state 
+- **Important reminder:** Delete resources after practice to avoid AWS billing charges 
+- Terraform code for different services (EC2, S3, etc.) sourced directly from **AWS Terraform provider documentation** — copy-paste workflow, not manual writing 
+
+---
+
+## Interview Questions Highlighted
+
+- What is IaC? Why do we use it? 
+- What is the difference between Ansible and Terraform? 
+- What are the different files in Terraform (`main.tf`, `variable.tf`, `output.tf`, `terraform.tfstate`)? 
+- Where should the TF state file be stored and why (not GitHub — binary file corruption; use S3)? 
+- What is S3 versioning and why is it used with the state file? 
+- What is a Terraform provider / resource / variable / output / module? 
+- What is a dependency graph? (PayPal interview question cited) 
+- How do you decide resource creation order when provisioning 5+ resources? 
+- Can the secret key be re-downloaded after creation? (Answer: No — must regenerate) 
+- How does Terraform integrate with AWS? (Answer: IAM user → access key + secret key → `aws configure`) 
+- How does the Terraform state file maintain infrastructure? (Answer: maps real infra to config; tracks what exists; stored locally or remotely) 
+
+---
+
+## Learning Roadmap Presented
+
+Instructor outlined a **55 live session (Monday–Friday, 8:00–9:15 AM IST)** structured program:
+
+**Phase 1 — Foundation (Days 1–4)**
+
+- DevOps principles, cloud computing basics, AI overview 
+
+**Phase 2 — Linux (Days 5–10)**
+
+- Linux administration fundamentals 
+
+**Phase 3 — Multi-Cloud (10 days)**
+
+- **AWS:** Top 10 services (EC2, S3, RDS, Lambda, VPC, IAM, CloudWatch, Route53, EKS, etc.) — 1 service per day, 2 practicals each 
+- **GCP:** Top 5 services 
+- **Azure:** Top 5 services 
+- Total: 20 cloud services, 35 practicals, 3 cloud projects 
+
+**Phase 4 — DevOps Tools (Top 10)**
+
+- Git, GitHub, Jenkins, Docker, Kubernetes, Ansible, Terraform, Prometheus, Grafana + Python & Shell scripting basics 
+- Projects: CI/CD (Spring Boot + Jenkins + GitHub), Microservices on GKE, DevSecOps (SonarQube + Trivy), Azure DevOps 
+
+**Phase 5 — AI & Advanced**
+
+- AIOps, MLOps, MCP Server, AI Agents, ATS resume building with AI 
+- 5 AI tools covered: ChatGPT, Copilot, Gemini, Claude, Docker AI (Gordon) 
+- 4 AI projects: ATS, AIOps, MLOps, MCP Server 
+
+**Program Features:**
+
+- 55 live sessions + 55 daily Q&A sessions 
+- 8-stage mock interview program (camera on, resume upload, cross-questions, scenario questions) 
+- 9 real-time projects 
+- **1,000-day recording access** (~2.5 years) 
+- Weekly challenges, AI-generated summaries after every session 
+- Resume building, LinkedIn certificate, internship certificate (for gap candidates) — all free 
+- Job portal with 35 integrated platforms (LinkedIn, Naukri, Indeed, Gulf job boards) 
+- Referral network among batch students 
+
+**Target Outcomes:**
+
+- Cloud Engineer role attainable after AWS phase 
+- 15–25 LPA package target for DevOps engineers 
+- 40–50 LPA possible for senior/architect-level profiles 
+- Job timeline: enroll now → complete in ~55 days → job by Dec 2025 / early 2026 
+
+---
+
+
+
+## Key Participant Interactions & Q&A
+
+- **Gopal (Linux Admin, 4–5 yrs):** Concerned about lack of AWS knowledge — instructor clarified automation runs on cloud, so cloud fundamentals are prerequisite; Linux → DevOps path directly applicable 
+- **Akash:** Asked whether Bash/PowerShell can replace Ansible — instructor explained limitation: no agentless SSH, manual credential management at scale becomes unmanageable 
+- **Noushab:** Questioned whether Ansible can create full infrastructure — instructor confirmed it's technically possible but requires thousands of lines of custom code vs. Terraform's ready-made zero-code approach; Ansible roles are for automation, not infra creation 
+- **Ritesh:** Asked if Terraform can be adopted mid-project without starting from scratch — instructor confirmed it is possible 
+- **Rupesh (5 yrs exp):** Correctly explained dependency graph with NSG/subnet example and raised remote backend state locking point for multi-developer environments 
+- **Aditya:** Asked whether Terraform auto-creates VPC/subnet if not specified — instructor confirmed Terraform uses default values if not explicitly defined; specific values require explicit resource blocks 
+- **Mithun (recently laid off):** Received detailed career counseling — advised to avoid mentioning Splunk (lowers perceived package), move toward cloud/DevOps, target 25–30 LPA India or UAE/Gulf market 
+- **Noushab (15 yrs C/C++ dev):** Advised to frame career narrative as cloud migration support in last company → now full cloud engineer; 13 years at one company reframed as cloud exposure in final years 
+- **Ankit (11 yrs, 14 LPA, Python/FastAPI):** Instructor identified FastAPI + ML project opportunity targeting 40 LPA; advised to frame experience as deploying ML algorithms via FastAPI on Kubernetes 
+- **Jishan (8 yrs infrastructure):** Conducted live mock introduction as Linux Admin; instructor provided cross-question coaching (e.g., "Why Ubuntu/CentOS over Windows?" — answered with performance and company server distribution) 
+
+---
+
+## Action Items
+
+- **All participants:** Join WhatsApp group (link shared in Zoom chat) for session links, AI summaries, and job referrals 
+- **All participants:** Send AWS console login screenshot and Terraform installation screenshot to WhatsApp group as confirmation 
+- **All participants:** Practice the Linux Admin self-introduction script shared in session; record on mobile and post to WhatsApp group 
+- **Interested participants:** Enroll via website using early-bird code before price reverts to ₹29K+GST; or scan UPI barcode 
+- **Enrolled participants:** Send payment screenshot to instructor's number for immediate LMS access and WhatsApp group addition 
+- **Mithun:** Confirm enrollment after resolving family medical matter; instructor to hold ₹25K pricing 
+- **Balaji:** Call instructor directly to discuss specific job search blockers 
+- **All participants:** Delete AWS resources created during practicals to avoid billing charges 
+- **Tomorrow's session:** Ansible workshop — same Zoom link via WhatsApp group
+
+
+---
+
+# 20+ Terraform Interview Questions & Answers
+
+## 1. What is Terraform?
+
+**Answer:** Terraform is an Infrastructure as Code (IaC) tool used to provision and manage infrastructure using configuration files. It can work with multiple cloud platforms such as AWS, Azure, GCP, Kubernetes, and many others.
+
+## 2. What is Infrastructure as Code?
+
+**Answer:** IaC means creating and managing infrastructure through code instead of manually creating resources from a cloud console. The main benefits are consistency, reusability, version control, and easier automation.
+
+## 3. What is a Terraform Provider?
+
+**Answer:** A provider is a plugin that allows Terraform to communicate with an external platform or API. For example, the AWS provider allows Terraform to create and manage AWS resources.
+
+## 4. What is a Terraform Resource?
+
+**Answer:** A resource represents an infrastructure component that Terraform manages, such as an EC2 instance, S3 bucket, VPC, subnet, or security group.
+
+## 5. What is `terraform init`?
+
+**Answer:** `terraform init` initializes a Terraform working directory. It downloads required providers and prepares the working directory for other Terraform commands.
+
+## 6. What is `terraform plan`?
+
+**Answer:** `terraform plan` shows what Terraform intends to create, change, or destroy. It is mainly used to review the expected changes before applying them.
+
+## 7. What is `terraform apply`?
+
+**Answer:** `terraform apply` executes the Terraform configuration and creates, modifies, or destroys resources according to the planned changes.
+
+## 8. What is Terraform State?
+
+**Answer:** Terraform state is Terraform's memory of the infrastructure it manages. It maps Terraform configuration with real resources and helps Terraform understand what already exists.
+
+## 9. Why should `terraform.tfstate` not be committed to GitHub?
+
+**Answer:** The state file can contain sensitive information and infrastructure details. It should be protected and normally managed through a remote backend in team environments rather than committed to source control.
+
+## 10. Why use an S3 backend for Terraform?
+
+**Answer:** An S3 backend provides centralized remote storage for Terraform state. It allows multiple engineers or CI/CD systems to work with the same state instead of keeping state only on one developer's laptop.
+
+## 11. Why is S3 versioning useful for Terraform state?
+
+**Answer:** Versioning keeps previous versions of the state object. If the state is accidentally changed or corrupted, an earlier version can help with recovery.
+
+## 12. What is State Locking?
+
+**Answer:** State locking prevents multiple Terraform operations from modifying the same state simultaneously. It helps avoid conflicting updates when multiple engineers or pipelines work on the same infrastructure.
+
+## 13. What is a Terraform Variable?
+
+**Answer:** A variable is an input value that makes Terraform code reusable. For example, the same EC2 configuration can use different instance types for development and production through variables.
+
+## 14. What is an Output in Terraform?
+
+**Answer:** An output exposes useful information after Terraform creates resources. Examples include an EC2 public IP, load balancer DNS name, or resource ID.
+
+## 15. What is a Terraform Module?
+
+**Answer:** A module is a reusable collection of Terraform configuration. Instead of writing the same VPC, EC2, or security group configuration repeatedly, we can create a module and reuse it.
+
+## 16. What is a Data Source?
+
+**Answer:** A data source allows Terraform to read information about existing infrastructure without creating that infrastructure. For example, Terraform can retrieve an existing VPC or AMI.
+
+## 17. What is a Terraform Backend?
+
+**Answer:** A backend defines where Terraform stores its state. A local backend stores state on the local machine, while a remote backend such as S3 stores it centrally for team collaboration.
+
+## 18. What is Terraform Dependency Graph?
+
+**Answer:** Terraform builds a dependency graph to determine the correct order for resource operations. For example, a subnet depends on a VPC, and an EC2 instance may depend on a subnet and security group.
+
+## 19. How does Terraform know what resources already exist?
+
+**Answer:** Terraform compares the configuration with the Terraform state and the real infrastructure. The state helps Terraform understand which resources are already managed and what changes are required.
+
+## 20. What is the difference between Terraform and Ansible?
+
+**Answer:** Terraform is primarily used for infrastructure provisioning and lifecycle management, while Ansible is commonly used for configuration management and operational automation. For example, Terraform can create an EC2 instance and Ansible can install Java and deploy an application on it.
+
+## 21. What is `terraform destroy`?
+
+**Answer:** `terraform destroy` removes resources managed by the current Terraform configuration and state. It should be used carefully, especially against production infrastructure.
+
+## 22. What is a Terraform Workspace?
+
+**Answer:** A workspace allows the same Terraform configuration to work with separate state files. It can be useful when managing multiple environments, although many teams prefer separate environment directories or configurations for larger production setups.
+
+## 23. What is HCL?
+
+**Answer:** HCL stands for HashiCorp Configuration Language. Terraform uses HCL because it is designed to be human-readable and suitable for infrastructure configuration.
+
+## 24. Can Terraform work with multiple cloud providers?
+
+**Answer:** Yes. Terraform is multi-cloud and can use different providers in the same overall infrastructure architecture. This is one of the major reasons Terraform is popular for multi-cloud environments.
+
+## 25. How do you safely introduce Terraform into an existing project?
+
+**Answer:** First understand the existing infrastructure, identify resources that should be managed, configure the provider and backend, and then import existing resources into Terraform management. The goal is to avoid accidentally recreating production resources.
+
+---
+
+# 20 Scenario-Based Terraform Interview Questions & Answers
+
+## Scenario 1: Two engineers run Terraform at the same time
+
+**Question:** Two engineers run `terraform apply` against the same environment at the same time. What problem can occur and how would you prevent it?
+
+**Answer:** Both operations may try to modify the same state. Use a remote backend with state locking so only one operation can modify the state at a time. Team members should also follow a controlled CI/CD workflow.
+
+## Scenario 2: Terraform wants to recreate an EC2 instance
+
+**Question:** Terraform shows that an EC2 instance will be destroyed and recreated, but you expected only a small configuration change. What would you check?
+
+**Answer:** First inspect `terraform plan` carefully. Check which attribute is causing the replacement, whether the AMI or another immutable attribute changed, and whether the configuration differs from the current state. Do not blindly run `apply`.
+
+## Scenario 3: State file was accidentally deleted
+
+**Question:** A developer accidentally deletes the local `terraform.tfstate`. What would you do?
+
+**Answer:** If the project uses a remote backend, recover the state from the backend. If the state was only local, the team needs to recover it from backup if available or carefully import existing resources into Terraform again. This is why remote state and backups are important.
+
+## Scenario 4: Production state is stored locally
+
+**Question:** Your team has five engineers and production Terraform state is stored on one engineer's laptop. What would you recommend?
+
+**Answer:** Move the state to a secure remote backend such as S3 and configure appropriate state locking and access control. This provides centralized state management and better collaboration.
+
+## Scenario 5: Developer changes an EC2 instance manually
+
+**Question:** An engineer changes the EC2 instance configuration directly from the AWS Console. Later, Terraform plan shows a difference. Why?
+
+**Answer:** This is configuration drift. Terraform configuration and real infrastructure are no longer aligned. Review the plan and decide whether the manual change should be reflected in Terraform or reverted through Terraform.
+
+## Scenario 6: Same Terraform code for Dev and Prod
+
+**Question:** You need the same infrastructure pattern in Dev and Production, but instance sizes and networking values are different. How would you design it?
+
+**Answer:** Make environment-specific values configurable through variables and use reusable modules. Keep the infrastructure logic common while passing different values for each environment.
+
+## Scenario 7: Terraform needs an existing VPC
+
+**Question:** Your company already has a VPC created outside Terraform. You need to deploy an EC2 instance into it. What can you use?
+
+**Answer:** A data source can retrieve information about the existing VPC and subnet. Terraform can then use those values when creating the EC2 instance.
+
+## Scenario 8: Secret appears in Terraform configuration
+
+**Question:** A developer puts an AWS secret key directly inside `main.tf`. What is wrong with this approach?
+
+**Answer:** Secrets should not be hardcoded in Terraform configuration or committed to Git. Use secure credential mechanisms and secret management. Also rotate any credential that may already have been exposed.
+
+## Scenario 9: Terraform works locally but fails in CI/CD
+
+**Question:** Terraform works perfectly on your laptop but fails in Jenkins. What would you check?
+
+**Answer:** Check the CI/CD environment's Terraform version, provider versions, AWS credentials, IAM permissions, backend configuration, environment variables, working directory, and access to required APIs.
+
+## Scenario 10: Wrong AWS region
+
+**Question:** Terraform creates resources in the wrong AWS region. What would you investigate?
+
+**Answer:** Check the AWS provider configuration, variables, environment variables, AWS CLI configuration, and any region-specific provider aliases. Make the region explicit and validate it before applying changes.
+
+## Scenario 11: Resource creation order
+
+**Question:** You need to create a VPC, subnet, security group, and EC2 instance. How does Terraform decide the order?
+
+**Answer:** Terraform builds a dependency graph from resource references. If the EC2 references the subnet and security group, Terraform understands those dependencies and creates the required resources first.
+
+## Scenario 12: Terraform plan shows unexpected deletion
+
+**Question:** `terraform plan` shows that a production resource will be destroyed. What should you do?
+
+**Answer:** Stop and investigate. Check the exact plan, recent configuration changes, state, resource identifiers, and whether someone made manual changes. Do not approve the plan until the reason for the deletion is understood.
+
+## Scenario 13: Need to reuse VPC code
+
+**Question:** Your company creates similar VPCs for ten projects. How would you avoid copying the same Terraform code ten times?
+
+**Answer:** Create a reusable Terraform module for the VPC and call the module from each project with different input variables.
+
+## Scenario 14: Existing resource must come under Terraform
+
+**Question:** An S3 bucket already exists in AWS, but your team now wants Terraform to manage it. Do you need to delete and recreate it?
+
+**Answer:** No. Existing resources can be brought under Terraform management using Terraform's import capabilities. The configuration and state must then be aligned carefully.
+
+## Scenario 15: Developer changes a variable
+
+**Question:** A developer changes the EC2 instance type from `t3.micro` to a larger instance type. What happens when `terraform plan` runs?
+
+**Answer:** Terraform compares the desired configuration with the current state and determines the required change. The plan will show the proposed modification before anything is changed.
+
+## Scenario 16: Terraform state contains sensitive data
+
+**Question:** Your security team discovers sensitive information in the Terraform state. What should you do?
+
+**Answer:** Protect the backend using strong IAM permissions, encryption, restricted access, and secure storage. Review what data is being stored and rotate any credentials that may have been exposed.
+
+## Scenario 17: Multiple environments need separate state
+
+**Question:** Your organization has Dev, QA, and Production. Why should their Terraform states not be mixed carelessly?
+
+**Answer:** Each environment has different infrastructure and lifecycle requirements. Separating state reduces the risk of accidentally modifying one environment while working on another.
+
+## Scenario 18: Terraform apply fails halfway
+
+**Question:** Terraform starts creating ten resources but fails while creating the seventh. What should you do?
+
+**Answer:** First inspect the error and the resulting state. Terraform records successfully managed resources in state, so after fixing the root cause, run `terraform plan` again to understand what remains to be created or changed.
+
+## Scenario 19: Someone manually deletes an EC2 instance
+
+**Question:** Terraform state says an EC2 instance exists, but someone manually deleted it from AWS. What will Terraform detect?
+
+**Answer:** During refresh/planning, Terraform can detect that the real resource no longer exists. The next plan can show that the resource needs to be created again to match the configuration.
+
+## Scenario 20: Team wants approval before production changes
+
+**Question:** Your company wants every production Terraform change reviewed before execution. How would you implement this?
+
+**Answer:** Use a Git-based workflow with pull requests. CI can run `terraform fmt`, validation, security checks, and `terraform plan`. After approval, a controlled pipeline can execute `terraform apply`.
+
+## Scenario 21: Terraform code has formatting issues
+
+**Question:** A team has inconsistent Terraform formatting across multiple repositories. What can you use?
+
+**Answer:** Use `terraform fmt` to automatically format Terraform configuration consistently. Add it to CI/CD so formatting problems are caught automatically.
+
+## Scenario 22: A provider plugin is missing
+
+**Question:** Terraform reports that a required provider is missing. What command would you normally run first?
+
+**Answer:** Run `terraform init`. It initializes the working directory and downloads the required provider plugins.
+
+## Scenario 23: Need to review changes before production
+
+**Question:** Your manager asks, "Show me exactly what Terraform is going to change before you touch production." What command would you use?
+
+**Answer:** Run `terraform plan` and review the proposed additions, modifications, and deletions. In CI/CD, the plan can also be reviewed during the pull-request approval process.
+
+## Scenario 24: Ansible or Terraform?
+
+**Question:** Your requirement is to create 100 EC2 instances and then install Java and deploy an application on them. Which tool would you choose?
+
+**Answer:** Terraform is a good fit for provisioning the infrastructure, while Ansible can handle configuration and application deployment. In a real DevOps workflow, both can be used together.
+
+## Scenario 25: Terraform code is copied from the internet
+
+**Question:** A fresher copies Terraform code from GitHub and it works. Is that enough for an interview or production?
+
+**Answer:** No. You should understand the provider, resources, variables, dependencies, state, security implications, and lifecycle behavior. Copying code is useful for learning, but production code must be reviewed and understood.
