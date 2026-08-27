@@ -1,0 +1,510 @@
+# Ansible Setup with Ubuntu Docker Containers
+
+## Part 1: Create 3 Ubuntu VMs or Docker Containers
+
+### Step 1: Create a Docker Playground Instance
+
+Go to Docker Playground, create an instance/node, and create 3 Ubuntu containers.
+
+1. **1st container** - `ansible_master`
+2. **2nd container** - `target1`
+3. **3rd container** - `target2`
+
+### Step 2: Create Containers
+
+Run the following commands:
+
+```bash
+sudo apt-get update && sudo apt install docker.io -y
+
+docker run -itd --name ansible_master ubuntu /bin/bash
+docker run -itd --name target1 ubuntu /bin/bash
+docker run -itd --name target2 ubuntu /bin/bash
+```
+
+### Step 3: Check the Containers
+
+Check the running containers and verify their names:
+
+```bash
+docker ps
+```
+
+You should see:
+
+```text
+ansible_master
+target1
+target2
+```
+
+---
+
+# Part 2: Install Ansible and Required Tools in ansible_master
+
+### Step 4: Login to ansible_master
+
+Go inside the `ansible_master` container:
+
+```bash
+docker exec -it ansible_master bash
+```
+
+Update Ubuntu and install the required dependencies:
+
+```bash
+apt update
+apt install python-is-python3 vim iputils-ping openssh-client -y
+```
+
+Install the required software-properties package:
+
+```bash
+apt install software-properties-common
+```
+
+Add the Ansible PPA:
+
+```bash
+add-apt-repository --yes --update ppa:ansible/ansible
+```
+
+Install Ansible:
+
+```bash
+apt install ansible
+```
+
+Verify the Ansible installation:
+
+```bash
+ansible --version
+```
+
+---
+
+# Part 3: Setup Target Machines
+
+We will configure 2 target containers:
+
+* `target1`
+* `target2`
+
+## Setup Target 1
+
+### Step 5: Login to target1
+
+From the Docker node, run:
+
+```bash
+docker exec -it target1 bash
+```
+
+### Step 6: Update and Install SSH and Required Dependencies
+
+Run:
+
+```bash
+apt update
+apt install vim python-is-python3 iputils-ping openssh-client -y
+apt-get install openssh-client openssh-server -y
+```
+
+### Step 7: Configure SSH
+
+Edit the SSH configuration file:
+
+```bash
+cd /etc/ssh
+vi sshd_config
+```
+
+Uncomment the required parameters and modify them as follows:
+
+```text
+PermitRootLogin yes
+PasswordAuthentication yes
+```
+
+This will allow root login and password authentication for the lab environment.
+
+### Step 8: Start the SSH Service
+
+Check the SSH service:
+
+```bash
+service ssh status
+```
+
+Start the SSH service:
+
+```bash
+service ssh start
+```
+
+Check the status again:
+
+```bash
+service ssh status
+```
+
+---
+
+### Step 9: Change the Root Password
+
+Set the root password:
+
+```bash
+passwd root
+```
+
+Use:
+
+```text
+Admin
+Admin
+```
+
+as the password and confirmation.
+
+---
+
+# Part 4: Perform the Same Steps on target2
+
+### Step 10: Configure target2
+
+Login to `target2`:
+
+```bash
+docker exec -it target2 bash
+```
+
+Perform the same steps used for `target1`:
+
+```bash
+apt update
+apt install vim python-is-python3 iputils-ping openssh-client -y
+apt-get install openssh-client openssh-server -y
+```
+
+Edit SSH configuration:
+
+```bash
+cd /etc/ssh
+vi sshd_config
+```
+
+Configure:
+
+```text
+PermitRootLogin yes
+PasswordAuthentication yes
+```
+
+Start SSH:
+
+```bash
+service ssh status
+service ssh start
+service ssh status
+```
+
+Change the root password:
+
+```bash
+passwd root
+```
+
+Use:
+
+```text
+Admin
+Admin
+```
+
+---
+
+# Part 5: Find the IP Addresses of Target Containers
+
+We need the IP addresses of the target containers so that we can add them to the Ansible hosts file.
+
+### Step 11: Check Target IP Addresses
+
+Come out of the target container and go back to the Docker node.
+
+Run:
+
+```bash
+sudo docker inspect target1
+sudo docker inspect target2
+```
+
+Look for the `IPAddress` value.
+
+For example:
+
+```text
+172.17.0.3
+```
+
+You may get different IP addresses in your environment.
+
+---
+
+# Part 6: Setup ansible_master for SSH Connectivity
+
+### Step 12: Go to ansible_master
+
+Run:
+
+```bash
+docker exec -it ansible_master bash
+```
+
+### Step 13: Configure the Ansible Hosts File
+
+Go to the Ansible directory:
+
+```bash
+cd /etc/ansible/
+```
+
+Check the files:
+
+```bash
+ls
+```
+
+Open the `hosts` file:
+
+```bash
+vi hosts
+```
+
+Provide the IP addresses of the target machines.
+
+For example:
+
+```text
+172.17.0.3
+172.17.0.4
+```
+
+Use the actual IP addresses of your `target1` and `target2` containers.
+
+### Step 14: Verify Connectivity
+
+From `ansible_master`, ping the target machines:
+
+```bash
+ping <Target machine IP>
+```
+
+For example:
+
+```bash
+ping 172.17.0.3
+```
+
+Make sure the target machine is reachable from `ansible_master`.
+
+---
+
+# Part 7: Configure SSH Key-Based Connectivity
+
+Go back to the `ansible_master` container.
+
+### Step 15: Generate SSH Key
+
+Generate an SSH key using:
+
+```bash
+ssh-keygen
+```
+
+Press **Enter** 3 times:
+
+1. Enter to accept the default location
+2. Enter for an empty passphrase
+3. Enter to confirm the empty passphrase
+
+---
+
+### Step 16: Copy the SSH Key to the Target Machine
+
+Copy the generated SSH key from `ansible_master` to the remote target:
+
+```bash
+ssh-copy-id root@172.17.0.3
+```
+
+When prompted, enter:
+
+```text
+yes
+```
+
+Then provide the root password of the target machine.
+
+Repeat the same process for `target2` using its IP address.
+
+---
+
+### Step 17: Verify SSH Connectivity
+
+From `ansible_master`, connect to the target machine:
+
+```bash
+ssh root@172.17.0.3
+```
+
+If everything is configured correctly, you should be able to login without entering the password again.
+
+---
+
+### Step 18: Verify Nginx
+
+After connecting to the target machine, check whether Nginx is installed:
+
+```bash
+service nginx status
+```
+
+---
+
+# Part 8: Create and Run an Ansible Playbook
+
+Now we will create an Ansible playbook to install Nginx on all target machines.
+
+### Step 19: Create installnginx.yaml
+
+Go to the Ansible directory:
+
+```bash
+cd /etc/ansible
+```
+
+Create the playbook:
+
+```bash
+vi installnginx.yaml
+```
+
+Add the following code:
+
+```yaml
+---
+- hosts: all
+  tasks:
+    - name: ensure nginx is at the latest version
+      apt: name=nginx state=latest
+```
+
+Save and exit the file.
+
+---
+
+# Part 9: Run the Ansible Playbook
+
+Run the playbook using:
+
+```bash
+ansible-playbook installnginx.yaml
+```
+
+Ansible will connect to all machines listed in the `/etc/ansible/hosts` file and execute the task.
+
+The task will make sure that Nginx is installed and updated to the latest available version.
+
+You can then verify Nginx on the target machines:
+
+```bash
+service nginx status
+```
+
+---
+
+# Lab Architecture
+
+```text
+                    Ansible Master
+                  ┌─────────────────┐
+                  │ ansible_master  │
+                  │                 │
+                  │ Ansible         │
+                  │ SSH Client      │
+                  └────────┬────────┘
+                           │
+                 SSH / Ansible
+                    ┌──────┴──────┐
+                    │             │
+                    ▼             ▼
+             ┌────────────┐  ┌────────────┐
+             │  target1   │  │  target2   │
+             │            │  │            │
+             │ Ubuntu     │  │ Ubuntu     │
+             │ SSH Server │  │ SSH Server │
+             └────────────┘  └────────────┘
+```
+
+# Final Verification
+
+Check Ansible version:
+
+```bash
+ansible --version
+```
+
+Check the inventory:
+
+```bash
+cat /etc/ansible/hosts
+```
+
+Test Ansible connectivity:
+
+```bash
+ansible all -m ping
+```
+
+Run the Nginx installation playbook:
+
+```bash
+ansible-playbook installnginx.yaml
+```
+
+Verify Nginx on the target machines:
+
+```bash
+service nginx status
+```
+
+**Expected flow:**
+
+```text
+Docker Playground
+       ↓
+Create 3 Ubuntu Containers
+       ↓
+ansible_master + target1 + target2
+       ↓
+Install Ansible on ansible_master
+       ↓
+Configure SSH on target machines
+       ↓
+Find Target IP Addresses
+       ↓
+Configure /etc/ansible/hosts
+       ↓
+Generate SSH Keys
+       ↓
+Copy SSH Keys to Targets
+       ↓
+Test SSH Connectivity
+       ↓
+Create Ansible Playbook
+       ↓
+Run ansible-playbook
+       ↓
+Install Nginx on Target Machines
+```
