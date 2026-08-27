@@ -922,6 +922,58 @@ Terraform parses resource expressions to construct an implicit dependency graph 
                            • OS-level configuration & App runtimes
                            • Dynamic Inventory from Terraform Outputs
 ```
+Terraform drift is the gap that happens when your real-world cloud infrastructure changes outside of your configuration files and state file.
+  What Causes Drift?
+  
+  or 
+  
+  The actual infrastructure AWS  has changed, but your Terraform configuration/state does not know about that change.
+  
+  Now we have drift:
+
+Terraform Code       AWS manulaly 
+     ↓                ↓
+  t2.micro 2am        t2.large
+       \             /
+        \           /
+          DRIFT
+          
+       HOT FIX  situation 
+       
+How does Terraform detect it?
+
+Run:
+
+terraform plan
+  
+  Manual edits: Someone updates a setting directly in the cloud provider's console or dashboard.
+  
+  External scripts: Emergency fixes or automation tools modify resources without updating your IAC code.
+  
+  Provider updates: The cloud platform changes underlying resource parameters unexpectedly.
+  
+  How to Detect Drift
+  
+  Refresh state: Run terraform refresh or use terraform plan -refresh-only to check the actual cloud environment.
+  
+  Run a plan: Execute terraform plan to compare your configuration against the updated state.
+  
+  
+  
+  Automated checks: Set up a scheduled task or CI/CD pipeline using terraform plan -detailed-exitcode to alert your team when drift occurs
+  
+Important point: Drift is not always caused by Terraform
+
+Drift usually happens because of changes made outside Terraform, for example:
+
+AWS Console   aacecss 
+AWS CLI acecs s
+Another automation tool   2-3 
+AWS Lambda   
+CloudFormation    
+Manual changes by engineer
+
+
 
 ---
 > [!NOTE]
