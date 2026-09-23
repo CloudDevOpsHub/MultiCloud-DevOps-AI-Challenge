@@ -747,6 +747,58 @@ These questions focus on **which tool to use, why to use it, and when to use it*
 5. **Use case:** How would you implement it?
 6. **Alternative:** Mention an alternative when relevant.
 
+7. Extra 10 Repetative Question's
+
+8. # 10 Basic DevOps Questions & Answers
+
+## 1. What is DevOps?
+
+**Answer:**  
+DevOps is a combination of **Development (Dev)** and **Operations (Ops)**. It is a culture and set of practices that help development and operations teams work together to build, test, deploy, and maintain applications faster and more reliably.
+
+---
+
+## 2. What are the main goals of DevOps?
+
+**Answer:**  
+The main goals of DevOps are:
+
+- Faster software delivery
+- Automation of repetitive tasks
+- Better collaboration between teams
+- Continuous Integration and Continuous Delivery
+- Faster bug fixing
+- Improved application reliability
+- Continuous monitoring and feedback
+
+---
+
+## 3. What is CI/CD?
+
+**Answer:**  
+CI/CD stands for **Continuous Integration and Continuous Delivery/Deployment**.
+
+- **CI (Continuous Integration):** Developers frequently merge their code into a shared repository, where automated builds and tests are executed.
+- **CD (Continuous Delivery):** Code is automatically prepared and made ready for deployment.
+- **Continuous Deployment:** Code that passes all required checks is automatically deployed to production.
+
+**Example:**
+
+```text
+Developer
+   ↓
+GitHub
+   ↓
+Jenkins
+   ↓
+Build
+   ↓
+Test
+   ↓
+Docker Image
+   ↓
+Kubernetes
+
 **Example:**
 
 > "If I need to automate infrastructure provisioning across AWS and GCP, I would consider Terraform because it provides an Infrastructure as Code approach and supports multiple cloud providers. I would keep the Terraform code in Git and use CI/CD to validate and apply infrastructure changes through a controlled workflow."
