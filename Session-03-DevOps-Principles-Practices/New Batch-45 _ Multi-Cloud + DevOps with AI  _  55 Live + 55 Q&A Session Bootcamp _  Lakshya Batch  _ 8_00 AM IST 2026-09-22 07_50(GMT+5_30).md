@@ -202,7 +202,7 @@ These questions are based on the DevOps toolchain covered in the session: planni
 
 ## 1. What is Jira and why is it used in DevOps?
 
-**Answer:** Jira is a project and issue tracking tool. Teams use it to create tickets, stories, tasks, bugs, and epics and to track their progress.
+**Answer:** Jira is a project managment and issue tracking tool. Teams use it to create tickets, stories, tasks, bugs, and epics and to track their progress.
 
 **Use case:** A Scrum team creates a ticket for a new application feature, assigns it to a developer, and tracks it from development to completion.
 
