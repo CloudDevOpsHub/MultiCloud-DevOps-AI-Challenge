@@ -285,4 +285,186 @@ Answers provided by participants Mandhir and Pawan:
 - **All participants:** Start posting on LinkedIn after each module completion; tag instructor and community; write posts personally (AI-assisted but self-customized). 
 - **Krunal:** Prepare a 15-minute project walkthrough of the AI PDF/audio platform for a future Friday session. 
 - **All participants:** Bookmark the job aggregator page shared in chat (clouddevops.website job portal section). 
-- **All participants:** Fill the question form via LMS link for technical questions to be addressed in upcoming sessions. 
+- **All participants:** Fill the question form via LMS link for technical questions to be addressed in upcoming sessions.
+
+# Batch-45 Day-5 Revision
+## 20 Basic Interview Q&A + 20 Scenario-Based Q&A
+
+Based on the Day-5 revision topics: AWS fundamentals, cloud computing models, DevOps principles, CI/CD, AWS services, and basic troubleshooting.
+
+---
+
+# Part 1: 20 Basic Interview Questions & Answers
+
+## 1. What is AWS?
+**Answer:** AWS is Amazon's cloud platform that provides on-demand services like compute, storage, networking, databases, and serverless services.
+
+## 2. What are the main benefits of cloud computing?
+**Answer:** On-demand resources, scalability, pay-as-you-go pricing, reduced infrastructure management, and faster provisioning.
+
+## 3. What is IaaS?
+**Answer:** Infrastructure as a Service provides infrastructure such as servers, networking, storage, and virtualization. Example: **AWS EC2**.
+
+## 4. What is PaaS?
+**Answer:** Platform as a Service provides the underlying infrastructure and platform so developers can focus mainly on their application.
+
+## 5. What is SaaS?
+**Answer:** Software as a Service is a ready-to-use application managed by the provider. Examples include Gmail and Google Drive.
+
+## 6. What is serverless computing?
+**Answer:** Serverless allows us to run code without managing servers. AWS Lambda is a common example.
+
+## 7. What is AWS EC2?
+**Answer:** EC2 is a virtual machine service used to run applications and workloads in AWS.
+
+## 8. What is AWS S3?
+**Answer:** S3 is an object storage service used to store files, images, backups, resumes, videos, and other objects.
+
+## 9. What is AWS RDS?
+**Answer:** RDS is a managed relational database service. AWS manages many database administration tasks for us.
+
+## 10. What is AWS VPC?
+**Answer:** VPC is a logically isolated network in AWS where we deploy and secure resources such as EC2 instances.
+
+## 11. What is AWS IAM?
+**Answer:** IAM is used to manage users, roles, permissions, and access to AWS resources.
+
+## 12. What is AWS Lambda?
+**Answer:** Lambda is a serverless compute service that executes code in response to events without requiring us to manage servers.
+
+## 13. What is DevOps?
+**Answer:** DevOps is a combination of practices, culture, and automation that helps development and operations teams deliver software faster and more reliably.
+
+## 14. What is Continuous Integration?
+**Answer:** CI automatically builds and tests code whenever developers integrate changes into the source-code repository.
+
+## 15. What is Continuous Delivery?
+**Answer:** Continuous Delivery automatically prepares code for deployment, but production deployment normally requires manual approval.
+
+## 16. What is Continuous Deployment?
+**Answer:** Continuous Deployment automatically deploys validated code to production without a manual approval step.
+
+## 17. What is Jenkins?
+**Answer:** Jenkins is an automation server commonly used to build, test, and automate CI/CD pipelines.
+
+## 18. What is Terraform?
+**Answer:** Terraform is an Infrastructure as Code tool used to provision and manage infrastructure using configuration files.
+
+## 19. What is Docker?
+**Answer:** Docker packages an application and its dependencies into a container so it can run consistently across environments.
+
+## 20. What is Kubernetes?
+**Answer:** Kubernetes is a container orchestration platform used to deploy, manage, scale, and recover containerized applications.
+
+---
+
+# Part 2: 20 Scenario-Based Interview Questions & Answers
+
+## 1. Developer pushed code to GitHub, but Jenkins didn't start. What will you check?
+**Answer:**
+- GitHub-Jenkins authentication
+- Webhook configuration
+- Jenkins job trigger configuration
+- Required Jenkins plugins
+- Jenkins logs
+- Repository permissions
+
+## 2. Your production deployment failed. How will you roll back?
+**Answer:** Use versioned builds. If V4 failed, redeploy the last stable V3 build through the pipeline. In Kubernetes, use the deployment rollback mechanism.
+
+## 3. Linux server is running out of disk space. What will you do?
+**Answer:** First check disk usage:
+```bash
+df -h
+du -sh *
+```
+Then identify large files/directories, check `/var/log`, clean unnecessary data, or increase storage/partition if required.
+
+## 4. You need to build a job portal on AWS. Which services would you use?
+**Answer:**
+- EC2 → application/frontend
+- RDS → relational database
+- S3 → resumes/files
+- VPC → networking and security
+
+## 5. You need to process an email whenever a message enters a queue. What would you use?
+**Answer:** Use **SQS + Lambda**. SQS receives the message and Lambda is triggered to process it.
+
+## 6. You have a task that runs only once every week. Would you use EC2 24/7?
+**Answer:** Not necessarily. Consider **Lambda with a scheduled trigger** because an always-running EC2 instance may not be required for an occasional task.
+
+## 7. Users upload files in different formats and you need to convert them to PDF automatically. What would you use?
+**Answer:** Store the uploaded files in **S3** and trigger **Lambda** to perform the conversion when the required event occurs.
+
+## 8. Your application needs a database that is continuously used by users. Lambda or RDS?
+**Answer:** For a continuously used relational database, choose **RDS**. Lambda is better suited to event-driven or short-duration processing.
+
+## 9. Your application CPU reaches 90% in production. What will you do?
+**Answer:** Identify the reason using monitoring and system-level investigation. Depending on the root cause, scale infrastructure, optimize the application, or work with developers to reduce resource consumption.
+
+## 10. Your Jenkins pipeline builds successfully but the application is not deployed. What will you check?
+**Answer:**
+- Deployment stage logs
+- Target server/Kubernetes connectivity
+- Credentials
+- Deployment configuration
+- Environment variables
+- Docker image availability
+- Deployment permissions
+
+## 11. Your Docker image works locally but fails in another environment. What will you investigate?
+**Answer:** Check whether the image contains all required dependencies, environment variables, configuration files, exposed ports, and correct application versions. Compare the runtime environments.
+
+## 12. Your Kubernetes application is running but users cannot access it. What would you check?
+**Answer:**
+1. Pod status
+2. Service
+3. Service endpoints
+4. Ingress configuration
+5. Application logs
+6. Network/security rules
+7. Container port vs service port
+
+## 13. Terraform creates the infrastructure but the application cannot connect to the database. What will you check?
+**Answer:** Check VPC/network configuration, security rules, database endpoint, ports, credentials, subnet placement, and whether the application is using the correct database endpoint.
+
+## 14. Your AWS application needs to store resumes uploaded by users. Which service would you choose?
+**Answer:** Use **S3** because it is designed for object/file storage. Store the object reference in the database if required.
+
+## 15. You need to control which users can access an S3 bucket. What would you use?
+**Answer:** Use **IAM permissions and roles**, along with appropriate S3 bucket policies, to control access.
+
+## 16. Your company wants developers to receive automatic feedback whenever they push code. How would you implement it?
+**Answer:** Configure a CI pipeline where GitHub triggers Jenkins. Jenkins builds the application, runs tests, and sends the build/test result back to the team.
+
+## 17. Your production deployment should require manager approval before deployment. Which approach would you use?
+**Answer:** Implement **Continuous Delivery** with a manual approval gate before production deployment.
+
+## 18. Management wants every successful code change deployed automatically to production. What approach is this?
+**Answer:** This is **Continuous Deployment**, where deployment happens automatically after the required build and testing stages without a manual approval step.
+
+## 19. Your AWS bill suddenly increases. What will you check first?
+**Answer:** Check active resources and their usage, identify unexpected resources or workloads, review billing details, and configure a **budget alarm** to receive alerts when spending crosses the defined threshold.
+
+## 20. Explain a complete DevOps pipeline for a real project.
+**Answer:**
+A typical flow is:
+
+**Developer → Git/PR → Jenkins → Build → Testing → Docker Image → Kubernetes → Monitoring → Feedback**
+
+Terraform can be used to provision the infrastructure required for the Kubernetes environment.
+
+---
+
+# Quick Interview Tip
+
+For scenario questions, don't just name a tool. Explain:
+
+**Problem → Investigation → Tool → Action → Expected Result**
+
+Example:
+
+> "First I will identify the issue from logs and monitoring. Then I will check the relevant configuration and connectivity. After finding the root cause, I will fix it and validate the application again."
+
+This approach makes the answer more practical and interview-friendly.
+
