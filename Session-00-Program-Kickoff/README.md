@@ -166,18 +166,18 @@ Action   : Complete ALL setup items before Session 01
 
 ```
 ACCOUNTS TO CREATE:
-☐ GitHub account (github.com) — if not already created
-☐ GCP account with $300 free credits (cloud.google.com/free)  https://www.clouddevopshub.com/blog/create-free-gcp-account-300-credits 
-☐ AWS account with free tier (aws.amazon.com/free)  https://www.clouddevopshub.com/blog/how-to-create-an-free-aws-account-in-2026-latest-step-by-step-guide   
-☐ Docker Hub account (hub.docker.com)
-☐ LinkedIn profile updated to "Open to Work" for DevOps roles
+☑️ GitHub account (github.com) — if not already created
+☑️ GCP account with $300 free credits (cloud.google.com/free)  https://www.clouddevopshub.com/blog/create-free-gcp-account-300-credits 
+☑️ AWS account with free tier (aws.amazon.com/free)  https://www.clouddevopshub.com/blog/how-to-create-an-free-aws-account-in-2026-latest-step-by-step-guide   
+☑️ Docker Hub account (hub.docker.com)
+☑️ LinkedIn profile updated to "Open to Work" for DevOps roles
 
 SOFTWARE TO INSTALL:
-☐ VS Code (code.visualstudio.com)
-☐ GitHub Copilot extension in VS Code (free with student or trial)
-☐ Git (git-scm.com)
-☐ MobaXterm for Windows (mobaxterm.mobatek.net) — SSH client
-☐ Docker Desktop (docker.com/products/docker-desktop)
+☑️ VS Code (code.visualstudio.com)
+☑️ GitHub Copilot extension in VS Code (free with student or trial)
+☑️ Git (git-scm.com)
+☑️ MobaXterm for Windows (mobaxterm.mobatek.net) — SSH client
+☑️ Docker Desktop (docker.com/products/docker-desktop)
 
 COMMUNITY TO JOIN:
 ☐ CloudDevOpsHub WhatsApp group — link from clouddevopshub.com
