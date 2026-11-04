@@ -48,7 +48,8 @@ Three distinct approaches were demonstrated, each with a specific use case:
 
 ### What Is a Pipeline?
 
-- A **pipeline** is an ordered set of **stages**, each containing **steps** (commands), executed sequentially to achieve a goal (e.g., clone → build → test → deploy). 
+- A **pipeline** is an ordered set of **stages**, each containing **steps** (commands), executed sequentially to achieve a goal (e.g., clone → build → test → deploy).
+- is a set of automated processes and tools that lets developers build, test, and deploy code to production quickly and safely
 - Written in **Groovy** language when coded directly in Jenkins. 
 - Analogy used: water flowing through pipes from a tank to multiple destinations — the pipeline defines the path and sequence. 
 
