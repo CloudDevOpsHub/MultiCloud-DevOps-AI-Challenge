@@ -67,8 +67,9 @@ The session introduced Docker from first principles, covering the motivation beh
 ### Three-Part Architecture 
 
 1. **Docker Client** — the terminal/CLI where commands are typed
-2. **Docker Host (Daemon)** — background service (`dockerd`) that processes all commands; runs as a daemon (constantly running in the background) 
-3. **Docker Registry (Docker Hub)** — centralized image storage; 3.5 million+ publicly available images 
+2. **Docker Host (Daemon)** — background service (`dockerd`) that processes all commands; runs as a daemon (constantly running in the background)
+3. The Docker daemon (dockerd) is the persistent background service that acts as the core engine of Docker on a host machine. 
+4. **Docker Registry (Docker Hub)** — centralized image storage; 3.5 million+ publicly available images 
 
 ### Command Flow (Hello World Walkthrough) 
 
