@@ -125,7 +125,7 @@ Dockerfile  →  docker build  →  Docker Image  →  docker run  →  Containe
 
 |    Aspect    |                                   Docker                                    |                    Kubernetes                    |
 |--------------|-----------------------------------------------------------------------------|--------------------------------------------------|
-| Primary role | **Containerization** — build, ship, run containers                          | **Orchestration** — manage containers at scale   |
+| Primary role | **Containerization** — build, ship, run containers                          | **Orchestration** — manage containers at scale orchestration is the automated arrangement, coordination, and management of multiple computer systems, servers, applications, and services so they work together as a single, cohesive workflow  |
 | Scale        | Suitable for small/dev environments (up to ~50 containers managed manually) | Required for hundreds/thousands of containers    |
 | Management   | Manual CLI commands                                                         | Automated deployment, scaling, self-healing      |
 | Use case     | Image creation, single-host container runs                                  | Multi-node clusters, microservices in production |
