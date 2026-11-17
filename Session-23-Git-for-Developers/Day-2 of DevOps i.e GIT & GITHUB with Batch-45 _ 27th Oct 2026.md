@@ -11,7 +11,7 @@ The session provided a comprehensive walkthrough of Git and GitHub concepts with
 - **Branch naming**: Default branch should be called **`main`** for new projects; older projects (3+ years) may still use **`master`** — both are functionally identical, the name change was introduced when **Microsoft acquired GitHub**. 
 - **Code ownership**: **Code owners** (technical leads/managers) are responsible for approving pull requests; DevOps engineers manage code infrastructure but do not own code review responsibility. 
 - **Branch protection**: Branch protection rules in GitHub settings can restrict who can merge into `main`, enforcing review gates before any code lands in production. 
-- **JDK installation**: Participants instructed to install **JDK 21** (not JRE) on local machines ahead of the next Jenkins-focused session. 
+- **JDK installation**: Participants instructed to install **JDK 27** (not JRE) on local machines ahead of the next Jenkins-focused session. 
 
 ---
 
