@@ -818,3 +818,193 @@ Compare the image history with the previous version. Look for large package inst
 - [ ] Explain safe Docker cleanup in a production environment.
 
 **Interview tip:** Do not stop at defining a command. Explain when you used it, what problem it solves, and how you would verify the result in a real environment.
+
+
+# Docker Container Auto-Restart After VM Reboot
+
+## Objective
+
+Configure Docker containers to start automatically when the virtual machine (VM), such as an AWS EC2 Ubuntu instance, restarts.
+
+Docker provides **restart policies** to control what happens when a container stops or the Docker daemon restarts.
+
+## 1. Docker Restart Policies
+
+| Restart policy | Description |
+|---|---|
+| `no` | Do not restart the container automatically. This is the default policy. |
+| `always` | Always restart the container when it stops. It also starts again after a Docker daemon or VM restart. |
+| `unless-stopped` | Restart the container after a Docker daemon or VM restart, unless it was explicitly stopped by the user. |
+| `on-failure` | Restart the container only when it exits with a non-zero exit code. |
+
+## 2. Set the Restart Policy While Creating a Container
+
+Use `--restart always` when creating the container:
+
+```bash
+docker run -d \
+  --name mynginx \
+  --restart always \
+  -p 80:80 \
+  nginx
+```
+
+Explanation:
+
+- `docker run`: Creates and starts a container.
+- `-d`: Runs the container in detached mode.
+- `--name mynginx`: Assigns the container the name `mynginx`.
+- `--restart always`: Configures the container to restart automatically.
+- `-p 80:80`: Maps host port 80 to container port 80.
+- `nginx`: Uses the Nginx image.
+
+## 3. Configure Auto-Restart for an Existing Container
+
+If the container already exists, update its restart policy without recreating it:
+
+```bash
+docker update --restart always mynginx
+```
+
+Recommended alternative:
+
+```bash
+docker update --restart unless-stopped mynginx
+```
+
+Use `unless-stopped` when you want the container to return after a VM reboot but stay stopped if you deliberately stopped it.
+
+## 4. Check the Container's Restart Policy
+
+```bash
+docker inspect -f '{{.HostConfig.RestartPolicy.Name}}' mynginx
+```
+
+Expected output:
+
+```text
+unless-stopped
+```
+
+You can also inspect the full restart policy:
+
+```bash
+docker inspect -f '{{json .HostConfig.RestartPolicy}}' mynginx
+```
+
+## 5. Ensure Docker Starts When Ubuntu Boots
+
+Enable the Docker service so it starts automatically when the VM boots:
+
+```bash
+sudo systemctl enable docker
+sudo systemctl start docker
+```
+
+Check the service status:
+
+```bash
+sudo systemctl status docker
+```
+
+If your installation uses Docker's containerd service, you can also enable it:
+
+```bash
+sudo systemctl enable containerd
+```
+
+## 6. Test the Complete Scenario
+
+First, check that the container is running:
+
+```bash
+docker ps
+```
+
+Restart the Ubuntu VM:
+
+```bash
+sudo reboot
+```
+
+Reconnect to the VM after it boots, then check:
+
+```bash
+sudo systemctl status docker
+docker ps
+```
+
+If the container is not listed as running, inspect all containers and their logs:
+
+```bash
+docker ps -a
+docker logs mynginx
+```
+
+## 7. Practical AWS EC2 Example
+
+Imagine that you deployed an Nginx application inside a Docker container on an AWS EC2 Ubuntu instance.
+
+1. Launch an EC2 Ubuntu instance.
+2. Install Docker and start the Docker service.
+3. Run the Nginx container with a restart policy.
+4. Reboot the EC2 instance.
+5. Wait for the instance to become available and reconnect.
+6. Run `docker ps` to verify that the Nginx container is running.
+
+Create the container:
+
+```bash
+docker run -d \
+  --name webapp \
+  --restart unless-stopped \
+  -p 80:80 \
+  nginx
+```
+
+Verify:
+
+```bash
+docker ps
+docker inspect -f '{{.HostConfig.RestartPolicy.Name}}' webapp
+```
+
+## 8. Useful Commands for Quick Revision
+
+| Task | Command |
+|---|---|
+| List running containers | `docker ps` |
+| List all containers | `docker ps -a` |
+| Create container with auto-restart | `docker run -d --name webapp --restart unless-stopped nginx` |
+| Update existing container | `docker update --restart always webapp` |
+| Disable restart policy | `docker update --restart no webapp` |
+| Check restart policy | `docker inspect -f '{{.HostConfig.RestartPolicy.Name}}' webapp` |
+| Start Docker at boot | `sudo systemctl enable docker` |
+| Start Docker now | `sudo systemctl start docker` |
+| Check Docker service | `sudo systemctl status docker` |
+| View container logs | `docker logs webapp` |
+| Restart VM | `sudo reboot` |
+
+## 9. Important Notes
+
+- A Docker restart policy works only when the Docker daemon is running.
+- Enable the Docker service at boot using `systemctl enable docker`.
+- Restart policies do not recover a VM that has been terminated or lost. VM recovery requires separate infrastructure configuration.
+- A restart policy does not guarantee that your application is healthy or ready to serve traffic. Use health checks and application monitoring as needed.
+- `docker stop` explicitly stops a container. With `unless-stopped`, Docker keeps it stopped across daemon and VM restarts until you start it again.
+- Docker restart policies apply to containers, not to the VM itself.
+
+## 10. Recommended Command for Students
+
+For a typical web application container, use:
+
+```bash
+docker run -d \
+  --name webapp \
+  --restart unless-stopped \
+  -p 80:80 \
+  nginx
+```
+
+**Key takeaway:** Use Docker restart policies to automatically recover containers after unexpected exits or VM reboots. For many standalone application containers, `unless-stopped` is a practical default.
+
