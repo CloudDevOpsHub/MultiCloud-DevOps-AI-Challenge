@@ -277,6 +277,7 @@ While hosting directly from the S3 website endpoint works well for internal test
 Amazon S3 (Simple Storage Service) is a fully managed, serverless **object storage service** designed to store and retrieve any amount of unstructured data (files, images, videos, backups, logs) from anywhere over the internet via HTTP/HTTPS.
 
 In contrast, Amazon EBS (Elastic Block Store) provides persistent **block-level storage volumes** designed to attach directly to a single EC2 instance within the same Availability Zone, acting like a physical hard drive formatted with an operating system filesystem (e.g., ext4, xfs). While EBS is bound to an instance and an Availability Zone for fast, transactional I/O, S3 operates with a flat namespace globally accessible via web endpoints and scales virtually without limits.
+and difference between bucket and object is -: A bucket is the storage container that holds your data, while an object is an actual file (like an image, video, or document) along with its metadata 
 
 ---
 
