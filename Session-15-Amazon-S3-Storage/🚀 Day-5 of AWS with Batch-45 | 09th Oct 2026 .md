@@ -629,3 +629,204 @@ This automates data hygiene, meets regulatory compliance, and slashes long-term 
 
 ---
 *End of AWS Day 5 Session Summary. Master these core storage paradigms, security troubleshooting workflows, and scenario questions to excel in Cloud & DevOps engineering interviews.*
+
+---
+
+## **8. AWS CLI – Practical S3 Management**
+
+**Introduction**
+
+AWS CLI (Command Line Interface) helps us manage AWS services directly from the terminal.
+
+As a Cloud Administrator, we can use AWS CLI to create buckets, check files, download objects, and manage storage without opening the AWS Console every time.
+
+### **8.1 Configure AWS CLI**
+
+Before using AWS CLI, we need to configure our AWS credentials and default region.
+
+**Command:**
+
+```bash
+aws configure
+```
+
+**Explanation:**
+
+This command asks for four details:
+
+- AWS Access Key ID
+- AWS Secret Access Key
+- Default Region
+- Default Output Format
+
+**Example:**
+
+```text
+Default region: ap-south-1
+Output format: json
+```
+
+Never upload AWS credentials or secret keys to GitHub.
+
+For EC2 instances, prefer an IAM Role instead of storing long-term access keys.
+
+### **8.2 Verify AWS Account Details**
+
+Before performing any AWS operation, we should check which AWS account and IAM identity we are using.
+
+**Command:**
+
+```bash
+aws sts get-caller-identity
+```
+
+**Explanation:**
+
+This command displays:
+
+- AWS Account ID
+- IAM User or Role ARN
+- User ID
+
+It helps us confirm that we are connected to the correct AWS account.
+
+### **8.3 List All S3 Buckets**
+
+To see all S3 buckets available in our AWS account, use:
+
+**Command:**
+
+```bash
+aws s3 ls
+```
+
+**Explanation:**
+
+This command displays all buckets that our current IAM identity is allowed to list.
+
+### **8.4 Create an S3 Bucket Using AWS CLI**
+
+We can create a new S3 bucket directly from the terminal.
+
+**Command:**
+
+```bash
+aws s3 mb s3://your-unique-bucket-name --region ap-south-1
+```
+
+**Explanation:**
+
+- `mb` means Make Bucket.
+- `s3://` identifies the S3 bucket location.
+- `--region ap-south-1` specifies the Mumbai region.
+
+**Important:** S3 general purpose bucket names must be globally unique. Replace the example name with your own unique bucket name.
+
+### **8.5 Download an Object from S3**
+
+We can download a file from an S3 bucket to our local system.
+
+**Command:**
+
+```bash
+aws s3 cp s3://your-bucket-name/index.html .
+```
+
+**Explanation:**
+
+This command downloads the index.html file from S3 into the current working directory.
+
+The dot (`.`) represents the current directory.
+
+### **8.6 Synchronize a Local Folder with S3**
+
+The AWS S3 sync command helps us upload new and changed files from a local folder to an S3 bucket.
+
+**Command:**
+
+```bash
+aws s3 sync ./website s3://your-bucket-name/
+```
+
+**Explanation:**
+
+This command compares the local website folder with the S3 bucket and uploads new or changed files.
+
+It is useful when updating static website content.
+
+### **8.7 List Objects Inside an S3 Bucket**
+
+To check which files are stored inside a bucket, use:
+
+**Command:**
+
+```bash
+aws s3 ls s3://your-bucket-name/
+```
+
+**Explanation:**
+
+This command displays the objects and folders available inside the selected bucket.
+
+### **8.8 Check S3 Object Metadata**
+
+Sometimes we need to check the details of a file stored in S3.
+
+**Command:**
+
+```bash
+aws s3api head-object \
+  --bucket your-bucket-name \
+  --key index.html
+```
+
+**Explanation:**
+
+This command displays object information such as:
+
+- File size
+- Content type
+- Last modified date
+- ETag
+- Encryption details, when available
+
+It is useful for checking whether an object exists and verifying its properties.
+
+### **8.9 Delete an Object from S3**
+
+We can delete a particular object using AWS CLI.
+
+**Command:**
+
+```bash
+aws s3 rm s3://your-bucket-name/index.html
+```
+
+**Explanation:**
+
+This command removes the selected object from the bucket.
+
+**Important:** If bucket versioning is enabled, this normally creates a delete marker. Previous object versions may still exist.
+
+Always verify the bucket and object name before running delete commands.
+
+### **8.10 Practical Learning Summary**
+
+After learning these commands, we can manage common S3 operations directly from the Linux terminal.
+
+These commands are useful for:
+
+- Daily cloud administration.
+- Managing website files.
+- Checking S3 objects.
+- Downloading important files.
+- Automating storage operations.
+- Troubleshooting AWS storage tasks.
+
+**Conclusion**
+
+AWS CLI makes Amazon S3 management easier and faster.
+
+Learning these commands helps Cloud Administrators perform everyday storage operations and build a strong foundation for AWS automation.
+
+---
