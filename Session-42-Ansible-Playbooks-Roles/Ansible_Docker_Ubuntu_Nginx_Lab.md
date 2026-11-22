@@ -20,22 +20,16 @@ The examples below use Docker containers for a quick lab. For production-like pr
 
 ## Part 1: Create three Ubuntu containers
 
-### Step 1: Open Docker Playground
-
-1. Open [Play with Docker](https://labs.play-with-docker.com/).
-2. Sign in if required and start a new session.
-3. Add an instance/node.
-4. Open the terminal of that node.
+### Step 1: Open GCP / AWS account create a  ubuntu VM 
 
 You will use this node as the Docker host. All three Ubuntu containers will run on it.
 
-### Step 2: Install Docker on the Playground node
+### Step 2: Install Docker on the VM and craete a node
 
 Run these commands on the Docker Playground node:
 
 ```bash
-apt-get update
-apt-get install docker.io -y
+sudo apt-get update && apt-get install docker.io -y
 ```
 
 Check that Docker is available:
@@ -59,7 +53,7 @@ docker run -itd --name target2 ubuntu /bin/bash
 What these options mean:
 
 - `docker run`: creates and starts a container.
-- `-i`: keeps standard input open.
+- `-i`: keeps standard input open i.e interactive mode.
 - `-t`: allocates a terminal.
 - `-d`: runs the container in the background.
 - `--name`: assigns a readable name to the container.
