@@ -264,7 +264,7 @@ The restart policy is applied by Docker after the daemon is running.
 **Answer:** They help reduce the final image by leaving build tools and unnecessary utilities out of the runtime stage. A smaller runtime image can have a reduced attack surface and fewer packages that need security updates.
 
 ### 16. What is a Docker container?
-**Answer:** A container is a lightweight, portable, executable instance created from an image. It packages an application with the dependencies and configuration needed to run.
+**Answer:** A Docker container is a lightweight, isolated and portable environment, it is used to run an application along with its required dependencies, libraries and configurations.
 
 ### 17. What is a Kubernetes node?
 **Answer:** A node is a machine, usually a virtual machine in a cloud environment, that runs Kubernetes workloads. A cluster is made up of one or more nodes.
